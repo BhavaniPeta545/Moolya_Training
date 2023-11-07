@@ -1,0 +1,395 @@
+{
+	"info": {
+		"_postman_id": "78fbd88c-1a53-4bc6-8aa4-683d7a0769b2",
+		"name": "Git Collection",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "30678661"
+	},
+	"item": [
+		{
+			"name": "New repo",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"fullname = pm.response.json().full_name\r",
+							"repo_name=pm.response.json().owner.login\r",
+							"name=pm.response.json().name\r",
+							"console.info(repo_name)\r",
+							"pm.environment.set(\"full_name\", fullname);\r",
+							"pm.environment.set(\"name\", name);\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "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",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/vnd.github+json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\":\"Helloworld{{$randomInt}}\",\r\n    \"description\":\"This is your first repository\",\r\n    \"homepage\":\"https://github.com\",\r\n    \"private\":false,\r\n    \"has_issues\":true,\r\n    \"has_projects\":true,\r\n    \"auto_init\" : true,\r\n    \"has_wiki\":true\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{giturl}}/orgs/{{orname}}/repos",
+					"host": [
+						"{{giturl}}"
+					],
+					"path": [
+						"orgs",
+						"{{orname}}",
+						"repos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "New Request",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "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",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/vnd.github+json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\r\n  \"homepage\": \"https://github.com\",\r\n  \"private\": true,\r\n  \"has_issues\": true,\r\n  \"has_projects\": true,\r\n  \"has_wiki\": true\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{giturl}}/repos/{{name}}",
+					"host": [
+						"{{giturl}}"
+					],
+					"path": [
+						"repos",
+						"{{name}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete repo",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "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",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/vnd.github+json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{giturl}}/repos/{{full_name}}",
+					"host": [
+						"{{giturl}}"
+					],
+					"path": [
+						"repos",
+						"{{full_name}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get the repo",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "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",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/vnd.github+json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{giturl}}/repos/{{full_name}}",
+					"host": [
+						"{{giturl}}"
+					],
+					"path": [
+						"repos",
+						"{{full_name}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create fork",
+			"request": {
+				"auth": {
+					"type": "oauth2",
+					"oauth2": [
+						{
+							"key": "tokenName",
+							"value": "",
+							"type": "string"
+						},
+						{
+							"key": "addTokenTo",
+							"value": "header",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/vnd.github+json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"organization\": \"BhavaniTesting\",\r\n    \"name\": \"Hello-World{{$randomInt}}\",\r\n    \"default_branch_only\": true\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{giturl}}/repos/{{full_name}}/forks",
+					"host": [
+						"{{giturl}}"
+					],
+					"path": [
+						"repos",
+						"{{full_name}}",
+						"forks"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get forks list",
+			"request": {
+				"auth": {
+					"type": "oauth2",
+					"oauth2": [
+						{
+							"key": "tokenName",
+							"value": "",
+							"type": "string"
+						},
+						{
+							"key": "addTokenTo",
+							"value": "header",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/vnd.github+json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{giturl}}/repos/{{full_name}}/forks",
+					"host": [
+						"{{giturl}}"
+					],
+					"path": [
+						"repos",
+						"{{full_name}}",
+						"forks"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Repos by user",
+			"request": {
+				"auth": {
+					"type": "oauth2",
+					"oauth2": [
+						{
+							"key": "tokenName",
+							"value": "",
+							"type": "string"
+						},
+						{
+							"key": "addTokenTo",
+							"value": "header",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/vnd.github+json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{giturl}}/users/{{accountname}}/repos",
+					"host": [
+						"{{giturl}}"
+					],
+					"path": [
+						"users",
+						"{{accountname}}",
+						"repos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get repo language",
+			"request": {
+				"auth": {
+					"type": "oauth2",
+					"oauth2": [
+						{
+							"key": "tokenName",
+							"value": "",
+							"type": "string"
+						},
+						{
+							"key": "addTokenTo",
+							"value": "header",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/vnd.github+json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{giturl}}/repos/{{full_name}}/languages",
+					"host": [
+						"{{giturl}}"
+					],
+					"path": [
+						"repos",
+						"{{full_name}}",
+						"languages"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "public repos",
+			"request": {
+				"auth": {
+					"type": "oauth2",
+					"oauth2": [
+						{
+							"key": "tokenName",
+							"value": "",
+							"type": "string"
+						},
+						{
+							"key": "addTokenTo",
+							"value": "header",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/vnd.github+json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{giturl}}/repositories?since=2023",
+					"host": [
+						"{{giturl}}"
+					],
+					"path": [
+						"repositories"
+					],
+					"query": [
+						{
+							"key": "since",
+							"value": "2023"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
