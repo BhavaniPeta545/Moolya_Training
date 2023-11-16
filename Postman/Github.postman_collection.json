@@ -1,0 +1,839 @@
+{
+	"info": {
+		"_postman_id": "b12870f8-bf39-4bf7-9ff4-59ee8823a3bf",
+		"name": "Github",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "30678661"
+	},
+	"item": [
+		{
+			"name": "New Repo",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"repo_name = pm.response.json().full_name\r",
+							"name=pm.response.json().name\r",
+							"console.log(repo_name)\r",
+							"pm.globals.set(\"rname\", repo_name);\r",
+							"pm.globals.set(\"name\",name);\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{gittoken}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/vnd.github+json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"name\": \"Hell{{$randomInt}}world\",\r\n  \"description\": \"This is your first repository\",\r\n  \"homepage\": \"https://github.com\",\r\n  \"private\": false,\r\n  \"has_issues\": true,\r\n  \"auto_init\":true,\r\n  \"has_projects\": true,\r\n  \"has_wiki\": true\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{giturl}}/orgs/{{orgname}}/repos",
+					"host": [
+						"{{giturl}}"
+					],
+					"path": [
+						"orgs",
+						"{{orgname}}",
+						"repos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Patch Repo",
+			"request": {
+				"auth": {
+					"type": "oauth2",
+					"oauth2": [
+						{
+							"key": "tokenName",
+							"value": "",
+							"type": "string"
+						},
+						{
+							"key": "addTokenTo",
+							"value": "header",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/vnd.github+json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\r\n  \"homepage\": \"https://github.com\",\r\n  \"private\": true,\r\n  \"has_issues\": true,\r\n  \"has_projects\": true,\r\n  \"has_wiki\": true\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{giturl}}/repos/{{rname}}",
+					"host": [
+						"{{giturl}}"
+					],
+					"path": [
+						"repos",
+						"{{rname}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Repo",
+			"request": {
+				"auth": {
+					"type": "oauth2",
+					"oauth2": [
+						{
+							"key": "tokenName",
+							"value": "",
+							"type": "string"
+						},
+						{
+							"key": "addTokenTo",
+							"value": "header",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/vnd.github+json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{giturl}}/repos/{{rname}}",
+					"host": [
+						"{{giturl}}"
+					],
+					"path": [
+						"repos",
+						"{{rname}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get repo",
+			"request": {
+				"auth": {
+					"type": "oauth2",
+					"oauth2": [
+						{
+							"key": "tokenName",
+							"value": "",
+							"type": "string"
+						},
+						{
+							"key": "addTokenTo",
+							"value": "header",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/vnd.github+json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{giturl}}/repos/{{rname}}",
+					"host": [
+						"{{giturl}}"
+					],
+					"path": [
+						"repos",
+						"{{rname}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create fork",
+			"request": {
+				"auth": {
+					"type": "oauth2",
+					"oauth2": [
+						{
+							"key": "tokenName",
+							"value": "",
+							"type": "string"
+						},
+						{
+							"key": "addTokenTo",
+							"value": "header",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/vnd.github+json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"default_branch_only\":true\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{giturl}}/repos/{{rname}}/forks",
+					"host": [
+						"{{giturl}}"
+					],
+					"path": [
+						"repos",
+						"{{rname}}",
+						"forks"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "list repo for user",
+			"request": {
+				"auth": {
+					"type": "oauth2",
+					"oauth2": [
+						{
+							"key": "tokenName",
+							"value": "",
+							"type": "string"
+						},
+						{
+							"key": "addTokenTo",
+							"value": "header",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/vnd.github+json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{giturl}}/{{rname}}/repos",
+					"host": [
+						"{{giturl}}"
+					],
+					"path": [
+						"{{rname}}",
+						"repos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "list repo language",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"\r",
+							"pm.test(\"Your test name\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData.Python).to.eql(824);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{gittoken}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/vnd.github+json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{giturl}}/repos/{{rname}}/languages",
+					"host": [
+						"{{giturl}}"
+					],
+					"path": [
+						"repos",
+						"{{rname}}",
+						"languages"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "List forks",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/vnd.github+json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{giturl}}/repos/{{rname}}/forks",
+					"host": [
+						"{{giturl}}"
+					],
+					"path": [
+						"repos",
+						"{{rname}}",
+						"forks"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "List repo for a user",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{gittoken}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/vnd.github+json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{giturl}}/users/{{accountname}}/repos",
+					"host": [
+						"{{giturl}}"
+					],
+					"path": [
+						"users",
+						"{{accountname}}",
+						"repos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "List public repos",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/vnd.github+json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{giturl}}/repositories",
+					"host": [
+						"{{giturl}}"
+					],
+					"path": [
+						"repositories"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create data/file",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"\r",
+							"// pm.test(\"Your test name\", function () {\r",
+							"//     var jsonData = pm.response.json();\r",
+							"//     pm.expect(jsonData.value).to.eql(100);\r",
+							"// });\r",
+							"\r",
+							"sha = pm.response.json().content.sha\r",
+							"console.log(sha)\r",
+							"pm.globals.set(\"sha\", sha);\r",
+							"\r",
+							"filename = pm.response.json().content.name\r",
+							"console.log(filename)\r",
+							"pm.globals.set(\"filename\", filename);"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{gittoken}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/vnd.github+json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"message\":\"my commit message\",\r\n    \"committer\":{\"name\":\"Monalisa Octocat{{$randomInt}}\",\"email\":\"octocat@github.com\"},\r\n    \"content\":\"bXkgbmV3IGZpbGUgY29udGVudHM=\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{giturl}}/repos/{{rname}}/contents/app{{$randomInt}}.txt",
+					"host": [
+						"{{giturl}}"
+					],
+					"path": [
+						"repos",
+						"{{rname}}",
+						"contents",
+						"app{{$randomInt}}.txt"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update data/file",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"updatesha = pm.response.json().content.sha\r",
+							"console.log(updatesha)\r",
+							"pm.globals.set(\"updatesha\", updatesha);"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{gittoken}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/vnd.github+json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"message\":\"a new commit message\",\r\n    \"committer\":{\"name\":\"Monalisa Octocat\",\"email\":\"octocat@github.com\"},\r\n    \"content\":\"bXkgdXBkYXRlZCBmaWxlIGNvbnRlbnRz\",\"sha\":\"{{sha}}\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{giturl}}/repos/{{rname}}/contents/{{filename}}",
+					"host": [
+						"{{giturl}}"
+					],
+					"path": [
+						"repos",
+						"{{rname}}",
+						"contents",
+						"{{filename}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete a file",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{gittoken}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "{{gitaccept}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"message\":\"a new commit message\",\r\n    \"committer\":{\"name\":\"Monalisa Octocat\",\"email\":\"octocat@github.com\"},\r\n    \"content\":\"bXkgdXBkYXRlZCBmaWxlIGNvbnRlbnRz\",\"sha\":\"{{updatesha}}\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{giturl}}/repos/{{rname}}/contents/{{filename}}",
+					"host": [
+						"{{giturl}}"
+					],
+					"path": [
+						"repos",
+						"{{rname}}",
+						"contents",
+						"{{filename}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Repo tags",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{gittoken}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "{{gitaccept}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{giturl}}/repos/{{rname}}/tags",
+					"host": [
+						"{{giturl}}"
+					],
+					"path": [
+						"repos",
+						"{{rname}}",
+						"tags"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Autolink",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"autolinkid = pm.response.json().id\r",
+							"console.log(autolinkid)\r",
+							"pm.globals.set(\"autolinkid\", autolinkid);"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{gittoken}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "{{gitaccept}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"key_prefix\":\"TICKET-\",\r\n    \"url_template\":\"https://example.com/TICKET?query=<num>\",\r\n    \"is_alphanumeric\":true\r\n\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{giturl}}/repos/{{rname}}/autolinks",
+					"host": [
+						"{{giturl}}"
+					],
+					"path": [
+						"repos",
+						"{{rname}}",
+						"autolinks"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DeleteAutolink",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{gittoken}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "{{gitaccept}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{giturl}}/repos/{{rname}}/autolinks/{{autolinkid}}",
+					"host": [
+						"{{giturl}}"
+					],
+					"path": [
+						"repos",
+						"{{rname}}",
+						"autolinks",
+						"{{autolinkid}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Listautolinks",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{gittoken}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "{{gitaccept}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{giturl}}/repos/{{rname}}/autolinks",
+					"host": [
+						"{{giturl}}"
+					],
+					"path": [
+						"repos",
+						"{{rname}}",
+						"autolinks"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "repor topics",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{gittoken}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "{{gitaccept}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{giturl}}/repos/{{rname}}/topics",
+					"host": [
+						"{{giturl}}"
+					],
+					"path": [
+						"repos",
+						"{{rname}}",
+						"topics"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Replace topics",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{gittoken}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "{{gitaccept}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"names\":[\"octocat\",\"atom\",\"electron\",\"api\"]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{giturl}}/repos/{{rname}}/topics",
+					"host": [
+						"{{giturl}}"
+					],
+					"path": [
+						"repos",
+						"{{rname}}",
+						"topics"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

@@ -106,10 +106,14 @@
 							"// pm.test(\"Body is correct\", function () {\r",
 							"//     pm.response.to.have.body(\"response_body_string\");\r",
 							"// });\r",
-							"pm.test(\"Your test name\", function () {\r",
-							"    var jsonData = pm.response.json();\r",
-							"    pm.expect(jsonData[0].customerName).to.eql(\"bhavani\");\r",
-							"});"
+							"// pm.test(\"Your test name\", function () {\r",
+							"//     var jsonData = pm.response.json();\r",
+							"//     pm.expect(jsonData[0].customerName).to.eql(\"Alison54\");\r",
+							"// });\r",
+							"\r",
+							"accessid = pm.response.json()[0].id\r",
+							"console.log(accessid)\r",
+							"pm.globals.set(\"orderid\", accessid);"
 						],
 						"type": "text/javascript"
 					}
@@ -191,6 +195,17 @@
 		},
 		{
 			"name": "New Request",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
 			"request": {
 				"auth": {
 					"type": "bearer",
@@ -206,7 +221,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "\r\n{\r\n  \"customerName\": \"bhavani\"\r\n}",
+					"raw": "\r\n{\r\n  \"customerName\": \"Alison54\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -214,13 +229,13 @@
 					}
 				},
 				"url": {
-					"raw": "{{baseurl}}/orders/wF0EE9QgnTkiZzFR4B4Ns",
+					"raw": "{{baseurl}}/orders/{{orderid}}",
 					"host": [
 						"{{baseurl}}"
 					],
 					"path": [
 						"orders",
-						"wF0EE9QgnTkiZzFR4B4Ns"
+						"{{orderid}}"
 					]
 				}
 			},
@@ -242,13 +257,13 @@
 				"method": "DELETE",
 				"header": [],
 				"url": {
-					"raw": "{{baseurl}}/orders/wF0EE9QgnTkiZzFR4B4Ns",
+					"raw": "{{baseurl}}/orders/{{orderid}}",
 					"host": [
 						"{{baseurl}}"
 					],
 					"path": [
 						"orders",
-						"wF0EE9QgnTkiZzFR4B4Ns"
+						"{{orderid}}"
 					]
 				}
 			},
