@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 6.1.1 (Python 3.12.0 on win32)" generated="20231124 11:00:50.419" rpa="false" schemaversion="4">
+<suite id="s1" name="Testcase" source="C:\Users\hp\PycharmProjects\CAlculator\testcase.robot">
+<test id="s1-t1" name="Open Application" line="5">
+<kw name="Open Application" library="AppiumLibrary">
+<arg>http://localhost:4723/wd/hub</arg>
+<arg>deviceName=Bhavani</arg>
+<arg>platformName=Android</arg>
+<arg>appPackage=com.android.calculator2</arg>
+<arg>appActivity=com.android.calculator2.Calculator</arg>
+<doc>Opens a new application to given Appium server.
+Capabilities of appium server, Android and iOS,
+Please check https://github.com/appium/appium/blob/master/docs/en/writing-running-appium/server-args.md
+| *Option*            | *Man.* | *Description*     |
+| remote_url          | Yes    | Appium server url |
+| alias               | no     | alias             |
+| strict_ssl          | No     | allows you to send commands to an invalid certificate host like a self-signed one. |</doc>
+<status status="PASS" starttime="20231124 11:00:50.689" endtime="20231124 11:01:00.083"/>
+</kw>
+<status status="PASS" starttime="20231124 11:00:50.689" endtime="20231124 11:01:00.084"/>
+</test>
+<test id="s1-t2" name="adding" line="8">
+<kw name="Click Element" library="AppiumLibrary">
+<arg>id=com.android.calculator2:id/digit_1</arg>
+<doc>Click element identified by `locator`.</doc>
+<msg timestamp="20231124 11:01:00.088" level="INFO">Clicking element 'id=com.android.calculator2:id/digit_1'.</msg>
+<msg timestamp="20231124 11:01:00.886" level="INFO">criteria is com.android.calculator2:id/digit_1</msg>
+<status status="PASS" starttime="20231124 11:01:00.086" endtime="20231124 11:01:00.886"/>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<arg>id=com.android.calculator2:id/op_add</arg>
+<doc>Click element identified by `locator`.</doc>
+<msg timestamp="20231124 11:01:00.888" level="INFO">Clicking element 'id=com.android.calculator2:id/op_add'.</msg>
+<msg timestamp="20231124 11:01:01.550" level="INFO">criteria is com.android.calculator2:id/op_add</msg>
+<status status="PASS" starttime="20231124 11:01:00.887" endtime="20231124 11:01:01.550"/>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<arg>id=com.android.calculator2:id/digit_9</arg>
+<doc>Click element identified by `locator`.</doc>
+<msg timestamp="20231124 11:01:01.552" level="INFO">Clicking element 'id=com.android.calculator2:id/digit_9'.</msg>
+<msg timestamp="20231124 11:01:02.137" level="INFO">criteria is com.android.calculator2:id/digit_9</msg>
+<status status="PASS" starttime="20231124 11:01:01.550" endtime="20231124 11:01:02.137"/>
+</kw>
+<kw name="Press Keycode" library="AppiumLibrary">
+<arg>161</arg>
+<doc>Sends a press of keycode to the device.</doc>
+<status status="PASS" starttime="20231124 11:01:02.138" endtime="20231124 11:01:02.719"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>10</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20231124 11:01:12.721" level="INFO">Slept 10 seconds</msg>
+<status status="PASS" starttime="20231124 11:01:02.719" endtime="20231124 11:01:12.721"/>
+</kw>
+<status status="PASS" starttime="20231124 11:01:00.086" endtime="20231124 11:01:12.723"/>
+</test>
+<test id="s1-t3" name="subtract" line="15">
+<kw name="Click Element" library="AppiumLibrary">
+<arg>com.android.calculator2:id/digit_9</arg>
+<doc>Click element identified by `locator`.</doc>
+<msg timestamp="20231124 11:01:12.733" level="INFO">Clicking element 'com.android.calculator2:id/digit_9'.</msg>
+<msg timestamp="20231124 11:01:12.784" level="INFO">criteria is com.android.calculator2:id/digit_9</msg>
+<status status="PASS" starttime="20231124 11:01:12.728" endtime="20231124 11:01:12.784"/>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<arg>com.android.calculator2:id/digit_8</arg>
+<doc>Click element identified by `locator`.</doc>
+<msg timestamp="20231124 11:01:12.785" level="INFO">Clicking element 'com.android.calculator2:id/digit_8'.</msg>
+<msg timestamp="20231124 11:01:13.441" level="INFO">criteria is com.android.calculator2:id/digit_8</msg>
+<status status="PASS" starttime="20231124 11:01:12.784" endtime="20231124 11:01:13.441"/>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<arg>com.android.calculator2:id/op_sub</arg>
+<doc>Click element identified by `locator`.</doc>
+<msg timestamp="20231124 11:01:13.444" level="INFO">Clicking element 'com.android.calculator2:id/op_sub'.</msg>
+<msg timestamp="20231124 11:01:14.033" level="INFO">criteria is com.android.calculator2:id/op_sub</msg>
+<status status="PASS" starttime="20231124 11:01:13.442" endtime="20231124 11:01:14.034"/>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<arg>com.android.calculator2:id/digit_6</arg>
+<doc>Click element identified by `locator`.</doc>
+<msg timestamp="20231124 11:01:14.036" level="INFO">Clicking element 'com.android.calculator2:id/digit_6'.</msg>
+<msg timestamp="20231124 11:01:14.614" level="INFO">criteria is com.android.calculator2:id/digit_6</msg>
+<status status="PASS" starttime="20231124 11:01:14.035" endtime="20231124 11:01:14.614"/>
+</kw>
+<kw name="Press Keycode" library="AppiumLibrary">
+<arg>161</arg>
+<doc>Sends a press of keycode to the device.</doc>
+<status status="PASS" starttime="20231124 11:01:14.615" endtime="20231124 11:01:15.194"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>10</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20231124 11:01:25.195" level="INFO">Slept 10 seconds</msg>
+<status status="PASS" starttime="20231124 11:01:15.194" endtime="20231124 11:01:25.195"/>
+</kw>
+<status status="PASS" starttime="20231124 11:01:12.727" endtime="20231124 11:01:25.197"/>
+</test>
+<status status="PASS" starttime="20231124 11:00:50.420" endtime="20231124 11:01:25.202"/>
+</suite>
+<statistics>
+<total>
+<stat pass="3" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="3" fail="0" skip="0" id="s1" name="Testcase">Testcase</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

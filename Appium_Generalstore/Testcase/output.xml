@@ -1,0 +1,2385 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 6.1.1 (Python 3.12.0 on win32)" generated="20231127 11:31:59.012" rpa="false" schemaversion="4">
+<suite id="s1" name="Testcase" source="C:\Users\hp\PycharmProjects\Appium\Testcase\Testcase.robot">
+<test id="s1-t1" name="Launch the application" line="5">
+<kw name="Opening Application" library="operations">
+<kw name="Open Application" library="AppiumLibrary">
+<arg>${url}</arg>
+<arg>deviceName=${devicename}</arg>
+<arg>platformName=${platformname}</arg>
+<arg>appPackage=${apppackage}</arg>
+<arg>appActivity=${appactivity}</arg>
+<doc>Opens a new application to given Appium server.
+Capabilities of appium server, Android and iOS,
+Please check https://github.com/appium/appium/blob/master/docs/en/writing-running-appium/server-args.md
+| *Option*            | *Man.* | *Description*     |
+| remote_url          | Yes    | Appium server url |
+| alias               | no     | alias             |
+| strict_ssl          | No     | allows you to send commands to an invalid certificate host like a self-signed one. |</doc>
+<status status="PASS" starttime="20231127 11:31:59.728" endtime="20231127 11:32:11.330"/>
+</kw>
+<kw name="Waiting_Time" library="common keywords">
+<arg>5s</arg>
+<kw name="Sleep" library="BuiltIn">
+<arg>${element}</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20231127 11:32:16.332" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20231127 11:32:11.331" endtime="20231127 11:32:16.332"/>
+</kw>
+<status status="PASS" starttime="20231127 11:32:11.330" endtime="20231127 11:32:16.332"/>
+</kw>
+<status status="PASS" starttime="20231127 11:31:59.728" endtime="20231127 11:32:16.332"/>
+</kw>
+<status status="PASS" starttime="20231127 11:31:59.727" endtime="20231127 11:32:16.333"/>
+</test>
+<test id="s1-t2" name="Provide details" line="7">
+<kw name="Select the country" library="operations">
+<kw name="Click the Element" library="common keywords">
+<arg>${country}</arg>
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<arg>${element1}</arg>
+<doc>Waits until element specified with `locator` is visible.</doc>
+<msg timestamp="20231127 11:32:16.496" level="INFO">criteria is com.androidsample.generalstore:id/spinnerCountry</msg>
+<status status="PASS" starttime="20231127 11:32:16.338" endtime="20231127 11:32:16.496"/>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<arg>${element1}</arg>
+<doc>Click element identified by `locator`.</doc>
+<msg timestamp="20231127 11:32:16.501" level="INFO">Clicking element 'id=com.androidsample.generalstore:id/spinnerCountry'.</msg>
+<msg timestamp="20231127 11:32:16.626" level="INFO">criteria is com.androidsample.generalstore:id/spinnerCountry</msg>
+<status status="PASS" starttime="20231127 11:32:16.496" endtime="20231127 11:32:16.626"/>
+</kw>
+<status status="PASS" starttime="20231127 11:32:16.337" endtime="20231127 11:32:16.626"/>
+</kw>
+<kw name="Tap With Positions" library="AppiumLibrary">
+<doc>Taps on a particular place with up to five fingers, holding for a
+certain time</doc>
+<status status="PASS" starttime="20231127 11:32:16.627" endtime="20231127 11:32:16.666"/>
+</kw>
+<kw name="Waiting_Time" library="common keywords">
+<arg>5s</arg>
+<kw name="Sleep" library="BuiltIn">
+<arg>${element}</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20231127 11:32:21.668" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20231127 11:32:16.667" endtime="20231127 11:32:21.668"/>
+</kw>
+<status status="PASS" starttime="20231127 11:32:16.667" endtime="20231127 11:32:21.668"/>
+</kw>
+<kw name="Is Element Visible" library="common keywords">
+<arg>${countryframe}</arg>
+<kw name="Element Should Be Visible" library="AppiumLibrary">
+<arg>${element}</arg>
+<doc>Verifies that element identified with locator is visible.</doc>
+<msg timestamp="20231127 11:32:22.031" level="INFO">xpath criteria: /hierarchy/android.widget.FrameLayout/android.widget.FrameLayout</msg>
+<status status="PASS" starttime="20231127 11:32:21.669" endtime="20231127 11:32:22.031"/>
+</kw>
+<status status="PASS" starttime="20231127 11:32:21.668" endtime="20231127 11:32:22.031"/>
+</kw>
+<kw name="Swipe until Element found" library="operations">
+<arg>${element_visible}</arg>
+<kw name="Evaluate" library="BuiltIn">
+<var>${index}</var>
+<arg>1</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20231127 11:32:22.033" level="INFO">${index} = 1</msg>
+<status status="PASS" starttime="20231127 11:32:22.032" endtime="20231127 11:32:22.033"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${i}</var>
+<arg>1</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20231127 11:32:22.034" level="INFO">${i} = 1</msg>
+<status status="PASS" starttime="20231127 11:32:22.033" endtime="20231127 11:32:22.034"/>
+</kw>
+<while condition="${i}&gt;0">
+<iter>
+<kw name="Get Webelements" library="AppiumLibrary">
+<var>${LIST_ELEMENTS}</var>
+<arg>xpath=//android.widget.TextView</arg>
+<doc>Returns list of [http://selenium-python.readthedocs.io/api.html#module-selenium.webdriver.remote.webelement|WebElement] objects matching ``locator``.</doc>
+<msg timestamp="20231127 11:32:22.234" level="INFO">xpath criteria: //android.widget.TextView</msg>
+<msg timestamp="20231127 11:32:22.235" level="INFO">${LIST_ELEMENTS} = [&lt;appium.webdriver.webelement.WebElement (session="aee40f1a-72f8-479c-a07d-9ae8b4072f96", element="26174eb6-4273-43ff-9e37-1f0733cf0bef")&gt;, &lt;appium.webdriver.webelement.WebElement (session="aee40f1a-7...</msg>
+<status status="PASS" starttime="20231127 11:32:22.034" endtime="20231127 11:32:22.235"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${LIST_ELEMENTS}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20231127 11:32:22.235" endtime="20231127 11:32:22.236"/>
+</kw>
+<kw name="Get Length" library="BuiltIn">
+<var>${LIST_LENGTH}</var>
+<arg>${LIST_ELEMENTS}</arg>
+<doc>Returns and logs the length of the given item as an integer.</doc>
+<msg timestamp="20231127 11:32:22.237" level="INFO">Length is 9</msg>
+<msg timestamp="20231127 11:32:22.237" level="INFO">${LIST_LENGTH} = 9</msg>
+<status status="PASS" starttime="20231127 11:32:22.237" endtime="20231127 11:32:22.237"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${LIST_LENGTH}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20231127 11:32:22.237" endtime="20231127 11:32:22.238"/>
+</kw>
+<for flavor="IN">
+<var>${elem}</var>
+<value>@{LIST_ELEMENTS}</value>
+<iter>
+<var name="${elem}">&lt;appium.webdriver.webelement.WebElement (session="aee40f1a-72f8-479c-a07d-9ae8b4072f96", element="26174eb6-4273-43ff-9e37-1f0733cf0bef")&gt;</var>
+<kw name="Get Element Attribute" library="AppiumLibrary">
+<var>${country}</var>
+<arg>${elem}</arg>
+<arg>text</arg>
+<doc>Get element attribute using given attribute: name, value,...</doc>
+<msg timestamp="20231127 11:32:22.271" level="INFO">Element '&lt;appium.webdriver.webelement.WebElement (session="aee40f1a-72f8-479c-a07d-9ae8b4072f96", element="26174eb6-4273-43ff-9e37-1f0733cf0bef")&gt;' attribute 'text' value 'Afghanistan' </msg>
+<msg timestamp="20231127 11:32:22.271" level="INFO">${country} = Afghanistan</msg>
+<status status="PASS" starttime="20231127 11:32:22.238" endtime="20231127 11:32:22.271"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${country}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20231127 11:32:22.271" endtime="20231127 11:32:22.272"/>
+</kw>
+<if>
+<branch type="IF" condition="&quot;${country}&quot; == &quot;${element_visible}&quot;">
+<kw name="Log To Console" library="BuiltIn">
+<arg>${country}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" starttime="20231127 11:32:22.272" endtime="20231127 11:32:22.273"/>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<arg>${elem}</arg>
+<doc>Click element identified by `locator`.</doc>
+<status status="NOT RUN" starttime="20231127 11:32:22.273" endtime="20231127 11:32:22.273"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${i}</var>
+<arg>${i}-1</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="NOT RUN" starttime="20231127 11:32:22.273" endtime="20231127 11:32:22.273"/>
+</kw>
+<break>
+<status status="NOT RUN" starttime="20231127 11:32:22.273" endtime="20231127 11:32:22.273"/>
+</break>
+<status status="NOT RUN" starttime="20231127 11:32:22.272" endtime="20231127 11:32:22.273"/>
+</branch>
+<status status="PASS" starttime="20231127 11:32:22.272" endtime="20231127 11:32:22.273"/>
+</if>
+<status status="PASS" starttime="20231127 11:32:22.238" endtime="20231127 11:32:22.273"/>
+</iter>
+<iter>
+<var name="${elem}">&lt;appium.webdriver.webelement.WebElement (session="aee40f1a-72f8-479c-a07d-9ae8b4072f96", element="efe875ae-2da7-425f-aa52-518788e40936")&gt;</var>
+<kw name="Get Element Attribute" library="AppiumLibrary">
+<var>${country}</var>
+<arg>${elem}</arg>
+<arg>text</arg>
+<doc>Get element attribute using given attribute: name, value,...</doc>
+<msg timestamp="20231127 11:32:22.307" level="INFO">Element '&lt;appium.webdriver.webelement.WebElement (session="aee40f1a-72f8-479c-a07d-9ae8b4072f96", element="efe875ae-2da7-425f-aa52-518788e40936")&gt;' attribute 'text' value 'Albania' </msg>
+<msg timestamp="20231127 11:32:22.307" level="INFO">${country} = Albania</msg>
+<status status="PASS" starttime="20231127 11:32:22.273" endtime="20231127 11:32:22.307"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${country}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20231127 11:32:22.307" endtime="20231127 11:32:22.308"/>
+</kw>
+<if>
+<branch type="IF" condition="&quot;${country}&quot; == &quot;${element_visible}&quot;">
+<kw name="Log To Console" library="BuiltIn">
+<arg>${country}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" starttime="20231127 11:32:22.309" endtime="20231127 11:32:22.309"/>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<arg>${elem}</arg>
+<doc>Click element identified by `locator`.</doc>
+<status status="NOT RUN" starttime="20231127 11:32:22.309" endtime="20231127 11:32:22.309"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${i}</var>
+<arg>${i}-1</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="NOT RUN" starttime="20231127 11:32:22.309" endtime="20231127 11:32:22.309"/>
+</kw>
+<break>
+<status status="NOT RUN" starttime="20231127 11:32:22.309" endtime="20231127 11:32:22.309"/>
+</break>
+<status status="NOT RUN" starttime="20231127 11:32:22.308" endtime="20231127 11:32:22.309"/>
+</branch>
+<status status="PASS" starttime="20231127 11:32:22.308" endtime="20231127 11:32:22.309"/>
+</if>
+<status status="PASS" starttime="20231127 11:32:22.273" endtime="20231127 11:32:22.309"/>
+</iter>
+<iter>
+<var name="${elem}">&lt;appium.webdriver.webelement.WebElement (session="aee40f1a-72f8-479c-a07d-9ae8b4072f96", element="b31eb793-efe5-4062-bfe9-df38899fa208")&gt;</var>
+<kw name="Get Element Attribute" library="AppiumLibrary">
+<var>${country}</var>
+<arg>${elem}</arg>
+<arg>text</arg>
+<doc>Get element attribute using given attribute: name, value,...</doc>
+<msg timestamp="20231127 11:32:22.338" level="INFO">Element '&lt;appium.webdriver.webelement.WebElement (session="aee40f1a-72f8-479c-a07d-9ae8b4072f96", element="b31eb793-efe5-4062-bfe9-df38899fa208")&gt;' attribute 'text' value 'Algeria' </msg>
+<msg timestamp="20231127 11:32:22.338" level="INFO">${country} = Algeria</msg>
+<status status="PASS" starttime="20231127 11:32:22.309" endtime="20231127 11:32:22.338"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${country}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20231127 11:32:22.339" endtime="20231127 11:32:22.340"/>
+</kw>
+<if>
+<branch type="IF" condition="&quot;${country}&quot; == &quot;${element_visible}&quot;">
+<kw name="Log To Console" library="BuiltIn">
+<arg>${country}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" starttime="20231127 11:32:22.340" endtime="20231127 11:32:22.340"/>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<arg>${elem}</arg>
+<doc>Click element identified by `locator`.</doc>
+<status status="NOT RUN" starttime="20231127 11:32:22.340" endtime="20231127 11:32:22.340"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${i}</var>
+<arg>${i}-1</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="NOT RUN" starttime="20231127 11:32:22.341" endtime="20231127 11:32:22.341"/>
+</kw>
+<break>
+<status status="NOT RUN" starttime="20231127 11:32:22.341" endtime="20231127 11:32:22.341"/>
+</break>
+<status status="NOT RUN" starttime="20231127 11:32:22.340" endtime="20231127 11:32:22.341"/>
+</branch>
+<status status="PASS" starttime="20231127 11:32:22.340" endtime="20231127 11:32:22.341"/>
+</if>
+<status status="PASS" starttime="20231127 11:32:22.309" endtime="20231127 11:32:22.341"/>
+</iter>
+<iter>
+<var name="${elem}">&lt;appium.webdriver.webelement.WebElement (session="aee40f1a-72f8-479c-a07d-9ae8b4072f96", element="dc714ff7-7d03-40a0-bb3f-7beff32e50b0")&gt;</var>
+<kw name="Get Element Attribute" library="AppiumLibrary">
+<var>${country}</var>
+<arg>${elem}</arg>
+<arg>text</arg>
+<doc>Get element attribute using given attribute: name, value,...</doc>
+<msg timestamp="20231127 11:32:22.372" level="INFO">Element '&lt;appium.webdriver.webelement.WebElement (session="aee40f1a-72f8-479c-a07d-9ae8b4072f96", element="dc714ff7-7d03-40a0-bb3f-7beff32e50b0")&gt;' attribute 'text' value 'American Samoa' </msg>
+<msg timestamp="20231127 11:32:22.372" level="INFO">${country} = American Samoa</msg>
+<status status="PASS" starttime="20231127 11:32:22.341" endtime="20231127 11:32:22.372"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${country}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20231127 11:32:22.372" endtime="20231127 11:32:22.373"/>
+</kw>
+<if>
+<branch type="IF" condition="&quot;${country}&quot; == &quot;${element_visible}&quot;">
+<kw name="Log To Console" library="BuiltIn">
+<arg>${country}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" starttime="20231127 11:32:22.374" endtime="20231127 11:32:22.374"/>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<arg>${elem}</arg>
+<doc>Click element identified by `locator`.</doc>
+<status status="NOT RUN" starttime="20231127 11:32:22.374" endtime="20231127 11:32:22.374"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${i}</var>
+<arg>${i}-1</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="NOT RUN" starttime="20231127 11:32:22.374" endtime="20231127 11:32:22.374"/>
+</kw>
+<break>
+<status status="NOT RUN" starttime="20231127 11:32:22.374" endtime="20231127 11:32:22.374"/>
+</break>
+<status status="NOT RUN" starttime="20231127 11:32:22.373" endtime="20231127 11:32:22.374"/>
+</branch>
+<status status="PASS" starttime="20231127 11:32:22.373" endtime="20231127 11:32:22.374"/>
+</if>
+<status status="PASS" starttime="20231127 11:32:22.341" endtime="20231127 11:32:22.374"/>
+</iter>
+<iter>
+<var name="${elem}">&lt;appium.webdriver.webelement.WebElement (session="aee40f1a-72f8-479c-a07d-9ae8b4072f96", element="82d3c5e8-3f61-4827-afbe-4f8aca126d91")&gt;</var>
+<kw name="Get Element Attribute" library="AppiumLibrary">
+<var>${country}</var>
+<arg>${elem}</arg>
+<arg>text</arg>
+<doc>Get element attribute using given attribute: name, value,...</doc>
+<msg timestamp="20231127 11:32:22.410" level="INFO">Element '&lt;appium.webdriver.webelement.WebElement (session="aee40f1a-72f8-479c-a07d-9ae8b4072f96", element="82d3c5e8-3f61-4827-afbe-4f8aca126d91")&gt;' attribute 'text' value 'Andorra' </msg>
+<msg timestamp="20231127 11:32:22.410" level="INFO">${country} = Andorra</msg>
+<status status="PASS" starttime="20231127 11:32:22.375" endtime="20231127 11:32:22.410"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${country}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20231127 11:32:22.411" endtime="20231127 11:32:22.411"/>
+</kw>
+<if>
+<branch type="IF" condition="&quot;${country}&quot; == &quot;${element_visible}&quot;">
+<kw name="Log To Console" library="BuiltIn">
+<arg>${country}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" starttime="20231127 11:32:22.413" endtime="20231127 11:32:22.413"/>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<arg>${elem}</arg>
+<doc>Click element identified by `locator`.</doc>
+<status status="NOT RUN" starttime="20231127 11:32:22.413" endtime="20231127 11:32:22.413"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${i}</var>
+<arg>${i}-1</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="NOT RUN" starttime="20231127 11:32:22.413" endtime="20231127 11:32:22.414"/>
+</kw>
+<break>
+<status status="NOT RUN" starttime="20231127 11:32:22.414" endtime="20231127 11:32:22.414"/>
+</break>
+<status status="NOT RUN" starttime="20231127 11:32:22.412" endtime="20231127 11:32:22.414"/>
+</branch>
+<status status="PASS" starttime="20231127 11:32:22.412" endtime="20231127 11:32:22.414"/>
+</if>
+<status status="PASS" starttime="20231127 11:32:22.375" endtime="20231127 11:32:22.414"/>
+</iter>
+<iter>
+<var name="${elem}">&lt;appium.webdriver.webelement.WebElement (session="aee40f1a-72f8-479c-a07d-9ae8b4072f96", element="c031d840-bfd6-4dd2-b2d8-132736bcce94")&gt;</var>
+<kw name="Get Element Attribute" library="AppiumLibrary">
+<var>${country}</var>
+<arg>${elem}</arg>
+<arg>text</arg>
+<doc>Get element attribute using given attribute: name, value,...</doc>
+<msg timestamp="20231127 11:32:22.452" level="INFO">Element '&lt;appium.webdriver.webelement.WebElement (session="aee40f1a-72f8-479c-a07d-9ae8b4072f96", element="c031d840-bfd6-4dd2-b2d8-132736bcce94")&gt;' attribute 'text' value 'Angola' </msg>
+<msg timestamp="20231127 11:32:22.453" level="INFO">${country} = Angola</msg>
+<status status="PASS" starttime="20231127 11:32:22.414" endtime="20231127 11:32:22.453"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${country}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20231127 11:32:22.453" endtime="20231127 11:32:22.454"/>
+</kw>
+<if>
+<branch type="IF" condition="&quot;${country}&quot; == &quot;${element_visible}&quot;">
+<kw name="Log To Console" library="BuiltIn">
+<arg>${country}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" starttime="20231127 11:32:22.454" endtime="20231127 11:32:22.454"/>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<arg>${elem}</arg>
+<doc>Click element identified by `locator`.</doc>
+<status status="NOT RUN" starttime="20231127 11:32:22.455" endtime="20231127 11:32:22.455"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${i}</var>
+<arg>${i}-1</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="NOT RUN" starttime="20231127 11:32:22.455" endtime="20231127 11:32:22.455"/>
+</kw>
+<break>
+<status status="NOT RUN" starttime="20231127 11:32:22.455" endtime="20231127 11:32:22.455"/>
+</break>
+<status status="NOT RUN" starttime="20231127 11:32:22.454" endtime="20231127 11:32:22.455"/>
+</branch>
+<status status="PASS" starttime="20231127 11:32:22.454" endtime="20231127 11:32:22.455"/>
+</if>
+<status status="PASS" starttime="20231127 11:32:22.414" endtime="20231127 11:32:22.455"/>
+</iter>
+<iter>
+<var name="${elem}">&lt;appium.webdriver.webelement.WebElement (session="aee40f1a-72f8-479c-a07d-9ae8b4072f96", element="dd8ad47a-0dad-43b2-ad38-839fc5d3a785")&gt;</var>
+<kw name="Get Element Attribute" library="AppiumLibrary">
+<var>${country}</var>
+<arg>${elem}</arg>
+<arg>text</arg>
+<doc>Get element attribute using given attribute: name, value,...</doc>
+<msg timestamp="20231127 11:32:22.485" level="INFO">Element '&lt;appium.webdriver.webelement.WebElement (session="aee40f1a-72f8-479c-a07d-9ae8b4072f96", element="dd8ad47a-0dad-43b2-ad38-839fc5d3a785")&gt;' attribute 'text' value 'Anguilla' </msg>
+<msg timestamp="20231127 11:32:22.485" level="INFO">${country} = Anguilla</msg>
+<status status="PASS" starttime="20231127 11:32:22.456" endtime="20231127 11:32:22.485"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${country}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20231127 11:32:22.485" endtime="20231127 11:32:22.486"/>
+</kw>
+<if>
+<branch type="IF" condition="&quot;${country}&quot; == &quot;${element_visible}&quot;">
+<kw name="Log To Console" library="BuiltIn">
+<arg>${country}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" starttime="20231127 11:32:22.486" endtime="20231127 11:32:22.486"/>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<arg>${elem}</arg>
+<doc>Click element identified by `locator`.</doc>
+<status status="NOT RUN" starttime="20231127 11:32:22.487" endtime="20231127 11:32:22.487"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${i}</var>
+<arg>${i}-1</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="NOT RUN" starttime="20231127 11:32:22.487" endtime="20231127 11:32:22.487"/>
+</kw>
+<break>
+<status status="NOT RUN" starttime="20231127 11:32:22.487" endtime="20231127 11:32:22.487"/>
+</break>
+<status status="NOT RUN" starttime="20231127 11:32:22.486" endtime="20231127 11:32:22.487"/>
+</branch>
+<status status="PASS" starttime="20231127 11:32:22.486" endtime="20231127 11:32:22.487"/>
+</if>
+<status status="PASS" starttime="20231127 11:32:22.455" endtime="20231127 11:32:22.487"/>
+</iter>
+<iter>
+<var name="${elem}">&lt;appium.webdriver.webelement.WebElement (session="aee40f1a-72f8-479c-a07d-9ae8b4072f96", element="af344fb4-7dd8-4a3f-8c64-271a5d3e8094")&gt;</var>
+<kw name="Get Element Attribute" library="AppiumLibrary">
+<var>${country}</var>
+<arg>${elem}</arg>
+<arg>text</arg>
+<doc>Get element attribute using given attribute: name, value,...</doc>
+<msg timestamp="20231127 11:32:22.513" level="INFO">Element '&lt;appium.webdriver.webelement.WebElement (session="aee40f1a-72f8-479c-a07d-9ae8b4072f96", element="af344fb4-7dd8-4a3f-8c64-271a5d3e8094")&gt;' attribute 'text' value 'Antarctica' </msg>
+<msg timestamp="20231127 11:32:22.513" level="INFO">${country} = Antarctica</msg>
+<status status="PASS" starttime="20231127 11:32:22.487" endtime="20231127 11:32:22.513"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${country}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20231127 11:32:22.513" endtime="20231127 11:32:22.514"/>
+</kw>
+<if>
+<branch type="IF" condition="&quot;${country}&quot; == &quot;${element_visible}&quot;">
+<kw name="Log To Console" library="BuiltIn">
+<arg>${country}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" starttime="20231127 11:32:22.515" endtime="20231127 11:32:22.515"/>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<arg>${elem}</arg>
+<doc>Click element identified by `locator`.</doc>
+<status status="NOT RUN" starttime="20231127 11:32:22.515" endtime="20231127 11:32:22.515"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${i}</var>
+<arg>${i}-1</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="NOT RUN" starttime="20231127 11:32:22.515" endtime="20231127 11:32:22.515"/>
+</kw>
+<break>
+<status status="NOT RUN" starttime="20231127 11:32:22.515" endtime="20231127 11:32:22.515"/>
+</break>
+<status status="NOT RUN" starttime="20231127 11:32:22.514" endtime="20231127 11:32:22.515"/>
+</branch>
+<status status="PASS" starttime="20231127 11:32:22.514" endtime="20231127 11:32:22.515"/>
+</if>
+<status status="PASS" starttime="20231127 11:32:22.487" endtime="20231127 11:32:22.515"/>
+</iter>
+<iter>
+<var name="${elem}">&lt;appium.webdriver.webelement.WebElement (session="aee40f1a-72f8-479c-a07d-9ae8b4072f96", element="335b88fe-4307-44fb-91b0-c3da5f5ce267")&gt;</var>
+<kw name="Get Element Attribute" library="AppiumLibrary">
+<var>${country}</var>
+<arg>${elem}</arg>
+<arg>text</arg>
+<doc>Get element attribute using given attribute: name, value,...</doc>
+<msg timestamp="20231127 11:32:22.542" level="INFO">Element '&lt;appium.webdriver.webelement.WebElement (session="aee40f1a-72f8-479c-a07d-9ae8b4072f96", element="335b88fe-4307-44fb-91b0-c3da5f5ce267")&gt;' attribute 'text' value 'Antigua and Barbuda' </msg>
+<msg timestamp="20231127 11:32:22.542" level="INFO">${country} = Antigua and Barbuda</msg>
+<status status="PASS" starttime="20231127 11:32:22.516" endtime="20231127 11:32:22.542"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${country}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20231127 11:32:22.543" endtime="20231127 11:32:22.543"/>
+</kw>
+<if>
+<branch type="IF" condition="&quot;${country}&quot; == &quot;${element_visible}&quot;">
+<kw name="Log To Console" library="BuiltIn">
+<arg>${country}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" starttime="20231127 11:32:22.544" endtime="20231127 11:32:22.544"/>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<arg>${elem}</arg>
+<doc>Click element identified by `locator`.</doc>
+<status status="NOT RUN" starttime="20231127 11:32:22.544" endtime="20231127 11:32:22.544"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${i}</var>
+<arg>${i}-1</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="NOT RUN" starttime="20231127 11:32:22.544" endtime="20231127 11:32:22.544"/>
+</kw>
+<break>
+<status status="NOT RUN" starttime="20231127 11:32:22.544" endtime="20231127 11:32:22.544"/>
+</break>
+<status status="NOT RUN" starttime="20231127 11:32:22.544" endtime="20231127 11:32:22.544"/>
+</branch>
+<status status="PASS" starttime="20231127 11:32:22.544" endtime="20231127 11:32:22.544"/>
+</if>
+<status status="PASS" starttime="20231127 11:32:22.515" endtime="20231127 11:32:22.544"/>
+</iter>
+<status status="PASS" starttime="20231127 11:32:22.238" endtime="20231127 11:32:22.544"/>
+</for>
+<kw name="Swipe" library="AppiumLibrary">
+<arg>789</arg>
+<arg>2088</arg>
+<arg>178</arg>
+<arg>595</arg>
+<doc>Swipe from one point to another point, for an optional duration.</doc>
+<status status="PASS" starttime="20231127 11:32:22.545" endtime="20231127 11:32:26.992"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20231127 11:32:31.994" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20231127 11:32:26.992" endtime="20231127 11:32:31.994"/>
+</kw>
+<status status="PASS" starttime="20231127 11:32:22.034" endtime="20231127 11:32:31.994"/>
+</iter>
+<iter>
+<kw name="Get Webelements" library="AppiumLibrary">
+<var>${LIST_ELEMENTS}</var>
+<arg>xpath=//android.widget.TextView</arg>
+<doc>Returns list of [http://selenium-python.readthedocs.io/api.html#module-selenium.webdriver.remote.webelement|WebElement] objects matching ``locator``.</doc>
+<msg timestamp="20231127 11:32:32.186" level="INFO">xpath criteria: //android.widget.TextView</msg>
+<msg timestamp="20231127 11:32:32.187" level="INFO">${LIST_ELEMENTS} = [&lt;appium.webdriver.webelement.WebElement (session="aee40f1a-72f8-479c-a07d-9ae8b4072f96", element="fc2825d2-9ecb-4442-9225-c33005d29ea2")&gt;, &lt;appium.webdriver.webelement.WebElement (session="aee40f1a-7...</msg>
+<status status="PASS" starttime="20231127 11:32:31.995" endtime="20231127 11:32:32.187"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${LIST_ELEMENTS}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20231127 11:32:32.187" endtime="20231127 11:32:32.188"/>
+</kw>
+<kw name="Get Length" library="BuiltIn">
+<var>${LIST_LENGTH}</var>
+<arg>${LIST_ELEMENTS}</arg>
+<doc>Returns and logs the length of the given item as an integer.</doc>
+<msg timestamp="20231127 11:32:32.188" level="INFO">Length is 9</msg>
+<msg timestamp="20231127 11:32:32.188" level="INFO">${LIST_LENGTH} = 9</msg>
+<status status="PASS" starttime="20231127 11:32:32.188" endtime="20231127 11:32:32.188"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${LIST_LENGTH}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20231127 11:32:32.188" endtime="20231127 11:32:32.189"/>
+</kw>
+<for flavor="IN">
+<var>${elem}</var>
+<value>@{LIST_ELEMENTS}</value>
+<iter>
+<var name="${elem}">&lt;appium.webdriver.webelement.WebElement (session="aee40f1a-72f8-479c-a07d-9ae8b4072f96", element="fc2825d2-9ecb-4442-9225-c33005d29ea2")&gt;</var>
+<kw name="Get Element Attribute" library="AppiumLibrary">
+<var>${country}</var>
+<arg>${elem}</arg>
+<arg>text</arg>
+<doc>Get element attribute using given attribute: name, value,...</doc>
+<msg timestamp="20231127 11:32:32.216" level="INFO">Element '&lt;appium.webdriver.webelement.WebElement (session="aee40f1a-72f8-479c-a07d-9ae8b4072f96", element="fc2825d2-9ecb-4442-9225-c33005d29ea2")&gt;' attribute 'text' value 'Antigua and Barbuda' </msg>
+<msg timestamp="20231127 11:32:32.216" level="INFO">${country} = Antigua and Barbuda</msg>
+<status status="PASS" starttime="20231127 11:32:32.189" endtime="20231127 11:32:32.216"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${country}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20231127 11:32:32.216" endtime="20231127 11:32:32.217"/>
+</kw>
+<if>
+<branch type="IF" condition="&quot;${country}&quot; == &quot;${element_visible}&quot;">
+<kw name="Log To Console" library="BuiltIn">
+<arg>${country}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" starttime="20231127 11:32:32.218" endtime="20231127 11:32:32.218"/>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<arg>${elem}</arg>
+<doc>Click element identified by `locator`.</doc>
+<status status="NOT RUN" starttime="20231127 11:32:32.218" endtime="20231127 11:32:32.218"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${i}</var>
+<arg>${i}-1</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="NOT RUN" starttime="20231127 11:32:32.218" endtime="20231127 11:32:32.218"/>
+</kw>
+<break>
+<status status="NOT RUN" starttime="20231127 11:32:32.218" endtime="20231127 11:32:32.218"/>
+</break>
+<status status="NOT RUN" starttime="20231127 11:32:32.217" endtime="20231127 11:32:32.218"/>
+</branch>
+<status status="PASS" starttime="20231127 11:32:32.217" endtime="20231127 11:32:32.218"/>
+</if>
+<status status="PASS" starttime="20231127 11:32:32.189" endtime="20231127 11:32:32.218"/>
+</iter>
+<iter>
+<var name="${elem}">&lt;appium.webdriver.webelement.WebElement (session="aee40f1a-72f8-479c-a07d-9ae8b4072f96", element="4f7aec7a-f782-440a-a9a3-9b9d3b3e83b0")&gt;</var>
+<kw name="Get Element Attribute" library="AppiumLibrary">
+<var>${country}</var>
+<arg>${elem}</arg>
+<arg>text</arg>
+<doc>Get element attribute using given attribute: name, value,...</doc>
+<msg timestamp="20231127 11:32:32.245" level="INFO">Element '&lt;appium.webdriver.webelement.WebElement (session="aee40f1a-72f8-479c-a07d-9ae8b4072f96", element="4f7aec7a-f782-440a-a9a3-9b9d3b3e83b0")&gt;' attribute 'text' value 'Argentina' </msg>
+<msg timestamp="20231127 11:32:32.245" level="INFO">${country} = Argentina</msg>
+<status status="PASS" starttime="20231127 11:32:32.219" endtime="20231127 11:32:32.245"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${country}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20231127 11:32:32.246" endtime="20231127 11:32:32.247"/>
+</kw>
+<if>
+<branch type="IF" condition="&quot;${country}&quot; == &quot;${element_visible}&quot;">
+<kw name="Log To Console" library="BuiltIn">
+<arg>${country}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" starttime="20231127 11:32:32.247" endtime="20231127 11:32:32.247"/>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<arg>${elem}</arg>
+<doc>Click element identified by `locator`.</doc>
+<status status="NOT RUN" starttime="20231127 11:32:32.248" endtime="20231127 11:32:32.248"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${i}</var>
+<arg>${i}-1</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="NOT RUN" starttime="20231127 11:32:32.248" endtime="20231127 11:32:32.248"/>
+</kw>
+<break>
+<status status="NOT RUN" starttime="20231127 11:32:32.248" endtime="20231127 11:32:32.248"/>
+</break>
+<status status="NOT RUN" starttime="20231127 11:32:32.247" endtime="20231127 11:32:32.248"/>
+</branch>
+<status status="PASS" starttime="20231127 11:32:32.247" endtime="20231127 11:32:32.248"/>
+</if>
+<status status="PASS" starttime="20231127 11:32:32.218" endtime="20231127 11:32:32.248"/>
+</iter>
+<iter>
+<var name="${elem}">&lt;appium.webdriver.webelement.WebElement (session="aee40f1a-72f8-479c-a07d-9ae8b4072f96", element="859fb897-9134-4569-bcca-bfd05e4e1304")&gt;</var>
+<kw name="Get Element Attribute" library="AppiumLibrary">
+<var>${country}</var>
+<arg>${elem}</arg>
+<arg>text</arg>
+<doc>Get element attribute using given attribute: name, value,...</doc>
+<msg timestamp="20231127 11:32:32.274" level="INFO">Element '&lt;appium.webdriver.webelement.WebElement (session="aee40f1a-72f8-479c-a07d-9ae8b4072f96", element="859fb897-9134-4569-bcca-bfd05e4e1304")&gt;' attribute 'text' value 'Armenia' </msg>
+<msg timestamp="20231127 11:32:32.274" level="INFO">${country} = Armenia</msg>
+<status status="PASS" starttime="20231127 11:32:32.248" endtime="20231127 11:32:32.274"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${country}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20231127 11:32:32.274" endtime="20231127 11:32:32.275"/>
+</kw>
+<if>
+<branch type="IF" condition="&quot;${country}&quot; == &quot;${element_visible}&quot;">
+<kw name="Log To Console" library="BuiltIn">
+<arg>${country}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" starttime="20231127 11:32:32.275" endtime="20231127 11:32:32.275"/>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<arg>${elem}</arg>
+<doc>Click element identified by `locator`.</doc>
+<status status="NOT RUN" starttime="20231127 11:32:32.275" endtime="20231127 11:32:32.275"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${i}</var>
+<arg>${i}-1</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="NOT RUN" starttime="20231127 11:32:32.275" endtime="20231127 11:32:32.275"/>
+</kw>
+<break>
+<status status="NOT RUN" starttime="20231127 11:32:32.275" endtime="20231127 11:32:32.275"/>
+</break>
+<status status="NOT RUN" starttime="20231127 11:32:32.275" endtime="20231127 11:32:32.275"/>
+</branch>
+<status status="PASS" starttime="20231127 11:32:32.275" endtime="20231127 11:32:32.276"/>
+</if>
+<status status="PASS" starttime="20231127 11:32:32.248" endtime="20231127 11:32:32.276"/>
+</iter>
+<iter>
+<var name="${elem}">&lt;appium.webdriver.webelement.WebElement (session="aee40f1a-72f8-479c-a07d-9ae8b4072f96", element="6c436abf-f91a-4e08-87e8-500bfc59ca35")&gt;</var>
+<kw name="Get Element Attribute" library="AppiumLibrary">
+<var>${country}</var>
+<arg>${elem}</arg>
+<arg>text</arg>
+<doc>Get element attribute using given attribute: name, value,...</doc>
+<msg timestamp="20231127 11:32:32.303" level="INFO">Element '&lt;appium.webdriver.webelement.WebElement (session="aee40f1a-72f8-479c-a07d-9ae8b4072f96", element="6c436abf-f91a-4e08-87e8-500bfc59ca35")&gt;' attribute 'text' value 'Aruba' </msg>
+<msg timestamp="20231127 11:32:32.303" level="INFO">${country} = Aruba</msg>
+<status status="PASS" starttime="20231127 11:32:32.276" endtime="20231127 11:32:32.303"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${country}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20231127 11:32:32.304" endtime="20231127 11:32:32.304"/>
+</kw>
+<if>
+<branch type="IF" condition="&quot;${country}&quot; == &quot;${element_visible}&quot;">
+<kw name="Log To Console" library="BuiltIn">
+<arg>${country}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" starttime="20231127 11:32:32.305" endtime="20231127 11:32:32.305"/>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<arg>${elem}</arg>
+<doc>Click element identified by `locator`.</doc>
+<status status="NOT RUN" starttime="20231127 11:32:32.305" endtime="20231127 11:32:32.305"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${i}</var>
+<arg>${i}-1</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="NOT RUN" starttime="20231127 11:32:32.305" endtime="20231127 11:32:32.305"/>
+</kw>
+<break>
+<status status="NOT RUN" starttime="20231127 11:32:32.305" endtime="20231127 11:32:32.305"/>
+</break>
+<status status="NOT RUN" starttime="20231127 11:32:32.304" endtime="20231127 11:32:32.305"/>
+</branch>
+<status status="PASS" starttime="20231127 11:32:32.304" endtime="20231127 11:32:32.305"/>
+</if>
+<status status="PASS" starttime="20231127 11:32:32.276" endtime="20231127 11:32:32.305"/>
+</iter>
+<iter>
+<var name="${elem}">&lt;appium.webdriver.webelement.WebElement (session="aee40f1a-72f8-479c-a07d-9ae8b4072f96", element="94e8e75c-ef61-4b81-813d-3bbb15f70742")&gt;</var>
+<kw name="Get Element Attribute" library="AppiumLibrary">
+<var>${country}</var>
+<arg>${elem}</arg>
+<arg>text</arg>
+<doc>Get element attribute using given attribute: name, value,...</doc>
+<msg timestamp="20231127 11:32:32.334" level="INFO">Element '&lt;appium.webdriver.webelement.WebElement (session="aee40f1a-72f8-479c-a07d-9ae8b4072f96", element="94e8e75c-ef61-4b81-813d-3bbb15f70742")&gt;' attribute 'text' value 'Australia' </msg>
+<msg timestamp="20231127 11:32:32.334" level="INFO">${country} = Australia</msg>
+<status status="PASS" starttime="20231127 11:32:32.306" endtime="20231127 11:32:32.334"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${country}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20231127 11:32:32.334" endtime="20231127 11:32:32.335"/>
+</kw>
+<if>
+<branch type="IF" condition="&quot;${country}&quot; == &quot;${element_visible}&quot;">
+<kw name="Log To Console" library="BuiltIn">
+<arg>${country}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" starttime="20231127 11:32:32.336" endtime="20231127 11:32:32.336"/>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<arg>${elem}</arg>
+<doc>Click element identified by `locator`.</doc>
+<status status="NOT RUN" starttime="20231127 11:32:32.336" endtime="20231127 11:32:32.336"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${i}</var>
+<arg>${i}-1</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="NOT RUN" starttime="20231127 11:32:32.336" endtime="20231127 11:32:32.336"/>
+</kw>
+<break>
+<status status="NOT RUN" starttime="20231127 11:32:32.336" endtime="20231127 11:32:32.336"/>
+</break>
+<status status="NOT RUN" starttime="20231127 11:32:32.335" endtime="20231127 11:32:32.336"/>
+</branch>
+<status status="PASS" starttime="20231127 11:32:32.335" endtime="20231127 11:32:32.336"/>
+</if>
+<status status="PASS" starttime="20231127 11:32:32.305" endtime="20231127 11:32:32.336"/>
+</iter>
+<iter>
+<var name="${elem}">&lt;appium.webdriver.webelement.WebElement (session="aee40f1a-72f8-479c-a07d-9ae8b4072f96", element="e07a3b93-0833-4f2e-b77c-60f19ebb077f")&gt;</var>
+<kw name="Get Element Attribute" library="AppiumLibrary">
+<var>${country}</var>
+<arg>${elem}</arg>
+<arg>text</arg>
+<doc>Get element attribute using given attribute: name, value,...</doc>
+<msg timestamp="20231127 11:32:32.363" level="INFO">Element '&lt;appium.webdriver.webelement.WebElement (session="aee40f1a-72f8-479c-a07d-9ae8b4072f96", element="e07a3b93-0833-4f2e-b77c-60f19ebb077f")&gt;' attribute 'text' value 'Austria' </msg>
+<msg timestamp="20231127 11:32:32.364" level="INFO">${country} = Austria</msg>
+<status status="PASS" starttime="20231127 11:32:32.336" endtime="20231127 11:32:32.364"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${country}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20231127 11:32:32.364" endtime="20231127 11:32:32.365"/>
+</kw>
+<if>
+<branch type="IF" condition="&quot;${country}&quot; == &quot;${element_visible}&quot;">
+<kw name="Log To Console" library="BuiltIn">
+<arg>${country}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" starttime="20231127 11:32:32.365" endtime="20231127 11:32:32.365"/>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<arg>${elem}</arg>
+<doc>Click element identified by `locator`.</doc>
+<status status="NOT RUN" starttime="20231127 11:32:32.365" endtime="20231127 11:32:32.365"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${i}</var>
+<arg>${i}-1</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="NOT RUN" starttime="20231127 11:32:32.365" endtime="20231127 11:32:32.365"/>
+</kw>
+<break>
+<status status="NOT RUN" starttime="20231127 11:32:32.365" endtime="20231127 11:32:32.365"/>
+</break>
+<status status="NOT RUN" starttime="20231127 11:32:32.365" endtime="20231127 11:32:32.365"/>
+</branch>
+<status status="PASS" starttime="20231127 11:32:32.365" endtime="20231127 11:32:32.365"/>
+</if>
+<status status="PASS" starttime="20231127 11:32:32.336" endtime="20231127 11:32:32.365"/>
+</iter>
+<iter>
+<var name="${elem}">&lt;appium.webdriver.webelement.WebElement (session="aee40f1a-72f8-479c-a07d-9ae8b4072f96", element="dab18641-f985-468c-81fb-6581ce1bd4c7")&gt;</var>
+<kw name="Get Element Attribute" library="AppiumLibrary">
+<var>${country}</var>
+<arg>${elem}</arg>
+<arg>text</arg>
+<doc>Get element attribute using given attribute: name, value,...</doc>
+<msg timestamp="20231127 11:32:32.397" level="INFO">Element '&lt;appium.webdriver.webelement.WebElement (session="aee40f1a-72f8-479c-a07d-9ae8b4072f96", element="dab18641-f985-468c-81fb-6581ce1bd4c7")&gt;' attribute 'text' value 'Azerbaijan' </msg>
+<msg timestamp="20231127 11:32:32.397" level="INFO">${country} = Azerbaijan</msg>
+<status status="PASS" starttime="20231127 11:32:32.366" endtime="20231127 11:32:32.397"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${country}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20231127 11:32:32.397" endtime="20231127 11:32:32.398"/>
+</kw>
+<if>
+<branch type="IF" condition="&quot;${country}&quot; == &quot;${element_visible}&quot;">
+<kw name="Log To Console" library="BuiltIn">
+<arg>${country}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" starttime="20231127 11:32:32.398" endtime="20231127 11:32:32.398"/>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<arg>${elem}</arg>
+<doc>Click element identified by `locator`.</doc>
+<status status="NOT RUN" starttime="20231127 11:32:32.398" endtime="20231127 11:32:32.398"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${i}</var>
+<arg>${i}-1</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="NOT RUN" starttime="20231127 11:32:32.399" endtime="20231127 11:32:32.399"/>
+</kw>
+<break>
+<status status="NOT RUN" starttime="20231127 11:32:32.399" endtime="20231127 11:32:32.399"/>
+</break>
+<status status="NOT RUN" starttime="20231127 11:32:32.398" endtime="20231127 11:32:32.399"/>
+</branch>
+<status status="PASS" starttime="20231127 11:32:32.398" endtime="20231127 11:32:32.399"/>
+</if>
+<status status="PASS" starttime="20231127 11:32:32.366" endtime="20231127 11:32:32.399"/>
+</iter>
+<iter>
+<var name="${elem}">&lt;appium.webdriver.webelement.WebElement (session="aee40f1a-72f8-479c-a07d-9ae8b4072f96", element="c31b4987-b2d2-4427-875b-c41528fc1ccc")&gt;</var>
+<kw name="Get Element Attribute" library="AppiumLibrary">
+<var>${country}</var>
+<arg>${elem}</arg>
+<arg>text</arg>
+<doc>Get element attribute using given attribute: name, value,...</doc>
+<msg timestamp="20231127 11:32:32.433" level="INFO">Element '&lt;appium.webdriver.webelement.WebElement (session="aee40f1a-72f8-479c-a07d-9ae8b4072f96", element="c31b4987-b2d2-4427-875b-c41528fc1ccc")&gt;' attribute 'text' value 'Bahamas' </msg>
+<msg timestamp="20231127 11:32:32.434" level="INFO">${country} = Bahamas</msg>
+<status status="PASS" starttime="20231127 11:32:32.399" endtime="20231127 11:32:32.434"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${country}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20231127 11:32:32.434" endtime="20231127 11:32:32.435"/>
+</kw>
+<if>
+<branch type="IF" condition="&quot;${country}&quot; == &quot;${element_visible}&quot;">
+<kw name="Log To Console" library="BuiltIn">
+<arg>${country}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" starttime="20231127 11:32:32.435" endtime="20231127 11:32:32.435"/>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<arg>${elem}</arg>
+<doc>Click element identified by `locator`.</doc>
+<status status="NOT RUN" starttime="20231127 11:32:32.435" endtime="20231127 11:32:32.435"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${i}</var>
+<arg>${i}-1</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="NOT RUN" starttime="20231127 11:32:32.435" endtime="20231127 11:32:32.435"/>
+</kw>
+<break>
+<status status="NOT RUN" starttime="20231127 11:32:32.435" endtime="20231127 11:32:32.435"/>
+</break>
+<status status="NOT RUN" starttime="20231127 11:32:32.435" endtime="20231127 11:32:32.435"/>
+</branch>
+<status status="PASS" starttime="20231127 11:32:32.435" endtime="20231127 11:32:32.436"/>
+</if>
+<status status="PASS" starttime="20231127 11:32:32.399" endtime="20231127 11:32:32.436"/>
+</iter>
+<iter>
+<var name="${elem}">&lt;appium.webdriver.webelement.WebElement (session="aee40f1a-72f8-479c-a07d-9ae8b4072f96", element="1d2a2630-c143-4ca6-89c6-e80770b46390")&gt;</var>
+<kw name="Get Element Attribute" library="AppiumLibrary">
+<var>${country}</var>
+<arg>${elem}</arg>
+<arg>text</arg>
+<doc>Get element attribute using given attribute: name, value,...</doc>
+<msg timestamp="20231127 11:32:32.463" level="INFO">Element '&lt;appium.webdriver.webelement.WebElement (session="aee40f1a-72f8-479c-a07d-9ae8b4072f96", element="1d2a2630-c143-4ca6-89c6-e80770b46390")&gt;' attribute 'text' value 'Bahrain' </msg>
+<msg timestamp="20231127 11:32:32.463" level="INFO">${country} = Bahrain</msg>
+<status status="PASS" starttime="20231127 11:32:32.436" endtime="20231127 11:32:32.464"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${country}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20231127 11:32:32.464" endtime="20231127 11:32:32.464"/>
+</kw>
+<if>
+<branch type="IF" condition="&quot;${country}&quot; == &quot;${element_visible}&quot;">
+<kw name="Log To Console" library="BuiltIn">
+<arg>${country}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" starttime="20231127 11:32:32.465" endtime="20231127 11:32:32.465"/>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<arg>${elem}</arg>
+<doc>Click element identified by `locator`.</doc>
+<status status="NOT RUN" starttime="20231127 11:32:32.465" endtime="20231127 11:32:32.465"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${i}</var>
+<arg>${i}-1</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="NOT RUN" starttime="20231127 11:32:32.465" endtime="20231127 11:32:32.465"/>
+</kw>
+<break>
+<status status="NOT RUN" starttime="20231127 11:32:32.466" endtime="20231127 11:32:32.466"/>
+</break>
+<status status="NOT RUN" starttime="20231127 11:32:32.465" endtime="20231127 11:32:32.466"/>
+</branch>
+<status status="PASS" starttime="20231127 11:32:32.465" endtime="20231127 11:32:32.466"/>
+</if>
+<status status="PASS" starttime="20231127 11:32:32.436" endtime="20231127 11:32:32.466"/>
+</iter>
+<status status="PASS" starttime="20231127 11:32:32.189" endtime="20231127 11:32:32.466"/>
+</for>
+<kw name="Swipe" library="AppiumLibrary">
+<arg>789</arg>
+<arg>2088</arg>
+<arg>178</arg>
+<arg>595</arg>
+<doc>Swipe from one point to another point, for an optional duration.</doc>
+<status status="PASS" starttime="20231127 11:32:32.466" endtime="20231127 11:32:36.717"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20231127 11:32:41.718" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20231127 11:32:36.718" endtime="20231127 11:32:41.718"/>
+</kw>
+<status status="PASS" starttime="20231127 11:32:31.994" endtime="20231127 11:32:41.718"/>
+</iter>
+<iter>
+<kw name="Get Webelements" library="AppiumLibrary">
+<var>${LIST_ELEMENTS}</var>
+<arg>xpath=//android.widget.TextView</arg>
+<doc>Returns list of [http://selenium-python.readthedocs.io/api.html#module-selenium.webdriver.remote.webelement|WebElement] objects matching ``locator``.</doc>
+<msg timestamp="20231127 11:32:41.877" level="INFO">xpath criteria: //android.widget.TextView</msg>
+<msg timestamp="20231127 11:32:41.877" level="INFO">${LIST_ELEMENTS} = [&lt;appium.webdriver.webelement.WebElement (session="aee40f1a-72f8-479c-a07d-9ae8b4072f96", element="22d928bc-314a-4e42-9d29-cb1272ced6b1")&gt;, &lt;appium.webdriver.webelement.WebElement (session="aee40f1a-7...</msg>
+<status status="PASS" starttime="20231127 11:32:41.718" endtime="20231127 11:32:41.877"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${LIST_ELEMENTS}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20231127 11:32:41.877" endtime="20231127 11:32:41.879"/>
+</kw>
+<kw name="Get Length" library="BuiltIn">
+<var>${LIST_LENGTH}</var>
+<arg>${LIST_ELEMENTS}</arg>
+<doc>Returns and logs the length of the given item as an integer.</doc>
+<msg timestamp="20231127 11:32:41.879" level="INFO">Length is 10</msg>
+<msg timestamp="20231127 11:32:41.879" level="INFO">${LIST_LENGTH} = 10</msg>
+<status status="PASS" starttime="20231127 11:32:41.879" endtime="20231127 11:32:41.879"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${LIST_LENGTH}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20231127 11:32:41.879" endtime="20231127 11:32:41.880"/>
+</kw>
+<for flavor="IN">
+<var>${elem}</var>
+<value>@{LIST_ELEMENTS}</value>
+<iter>
+<var name="${elem}">&lt;appium.webdriver.webelement.WebElement (session="aee40f1a-72f8-479c-a07d-9ae8b4072f96", element="22d928bc-314a-4e42-9d29-cb1272ced6b1")&gt;</var>
+<kw name="Get Element Attribute" library="AppiumLibrary">
+<var>${country}</var>
+<arg>${elem}</arg>
+<arg>text</arg>
+<doc>Get element attribute using given attribute: name, value,...</doc>
+<msg timestamp="20231127 11:32:41.913" level="INFO">Element '&lt;appium.webdriver.webelement.WebElement (session="aee40f1a-72f8-479c-a07d-9ae8b4072f96", element="22d928bc-314a-4e42-9d29-cb1272ced6b1")&gt;' attribute 'text' value 'Bahrain' </msg>
+<msg timestamp="20231127 11:32:41.914" level="INFO">${country} = Bahrain</msg>
+<status status="PASS" starttime="20231127 11:32:41.880" endtime="20231127 11:32:41.914"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${country}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20231127 11:32:41.914" endtime="20231127 11:32:41.915"/>
+</kw>
+<if>
+<branch type="IF" condition="&quot;${country}&quot; == &quot;${element_visible}&quot;">
+<kw name="Log To Console" library="BuiltIn">
+<arg>${country}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" starttime="20231127 11:32:41.915" endtime="20231127 11:32:41.915"/>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<arg>${elem}</arg>
+<doc>Click element identified by `locator`.</doc>
+<status status="NOT RUN" starttime="20231127 11:32:41.915" endtime="20231127 11:32:41.915"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${i}</var>
+<arg>${i}-1</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="NOT RUN" starttime="20231127 11:32:41.915" endtime="20231127 11:32:41.915"/>
+</kw>
+<break>
+<status status="NOT RUN" starttime="20231127 11:32:41.915" endtime="20231127 11:32:41.915"/>
+</break>
+<status status="NOT RUN" starttime="20231127 11:32:41.915" endtime="20231127 11:32:41.915"/>
+</branch>
+<status status="PASS" starttime="20231127 11:32:41.915" endtime="20231127 11:32:41.916"/>
+</if>
+<status status="PASS" starttime="20231127 11:32:41.880" endtime="20231127 11:32:41.916"/>
+</iter>
+<iter>
+<var name="${elem}">&lt;appium.webdriver.webelement.WebElement (session="aee40f1a-72f8-479c-a07d-9ae8b4072f96", element="ddf199a4-45a7-4c31-8914-172063228f9a")&gt;</var>
+<kw name="Get Element Attribute" library="AppiumLibrary">
+<var>${country}</var>
+<arg>${elem}</arg>
+<arg>text</arg>
+<doc>Get element attribute using given attribute: name, value,...</doc>
+<msg timestamp="20231127 11:32:41.944" level="INFO">Element '&lt;appium.webdriver.webelement.WebElement (session="aee40f1a-72f8-479c-a07d-9ae8b4072f96", element="ddf199a4-45a7-4c31-8914-172063228f9a")&gt;' attribute 'text' value 'Bangladesh' </msg>
+<msg timestamp="20231127 11:32:41.945" level="INFO">${country} = Bangladesh</msg>
+<status status="PASS" starttime="20231127 11:32:41.916" endtime="20231127 11:32:41.945"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${country}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20231127 11:32:41.945" endtime="20231127 11:32:41.946"/>
+</kw>
+<if>
+<branch type="IF" condition="&quot;${country}&quot; == &quot;${element_visible}&quot;">
+<kw name="Log To Console" library="BuiltIn">
+<arg>${country}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" starttime="20231127 11:32:41.947" endtime="20231127 11:32:41.947"/>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<arg>${elem}</arg>
+<doc>Click element identified by `locator`.</doc>
+<status status="NOT RUN" starttime="20231127 11:32:41.947" endtime="20231127 11:32:41.947"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${i}</var>
+<arg>${i}-1</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="NOT RUN" starttime="20231127 11:32:41.947" endtime="20231127 11:32:41.948"/>
+</kw>
+<break>
+<status status="NOT RUN" starttime="20231127 11:32:41.948" endtime="20231127 11:32:41.948"/>
+</break>
+<status status="NOT RUN" starttime="20231127 11:32:41.946" endtime="20231127 11:32:41.948"/>
+</branch>
+<status status="PASS" starttime="20231127 11:32:41.946" endtime="20231127 11:32:41.948"/>
+</if>
+<status status="PASS" starttime="20231127 11:32:41.916" endtime="20231127 11:32:41.948"/>
+</iter>
+<iter>
+<var name="${elem}">&lt;appium.webdriver.webelement.WebElement (session="aee40f1a-72f8-479c-a07d-9ae8b4072f96", element="9b80a29b-f08a-4b80-9467-28ac2895e1f3")&gt;</var>
+<kw name="Get Element Attribute" library="AppiumLibrary">
+<var>${country}</var>
+<arg>${elem}</arg>
+<arg>text</arg>
+<doc>Get element attribute using given attribute: name, value,...</doc>
+<msg timestamp="20231127 11:32:41.975" level="INFO">Element '&lt;appium.webdriver.webelement.WebElement (session="aee40f1a-72f8-479c-a07d-9ae8b4072f96", element="9b80a29b-f08a-4b80-9467-28ac2895e1f3")&gt;' attribute 'text' value 'Barbados' </msg>
+<msg timestamp="20231127 11:32:41.975" level="INFO">${country} = Barbados</msg>
+<status status="PASS" starttime="20231127 11:32:41.948" endtime="20231127 11:32:41.975"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${country}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20231127 11:32:41.975" endtime="20231127 11:32:41.976"/>
+</kw>
+<if>
+<branch type="IF" condition="&quot;${country}&quot; == &quot;${element_visible}&quot;">
+<kw name="Log To Console" library="BuiltIn">
+<arg>${country}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" starttime="20231127 11:32:41.976" endtime="20231127 11:32:41.976"/>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<arg>${elem}</arg>
+<doc>Click element identified by `locator`.</doc>
+<status status="NOT RUN" starttime="20231127 11:32:41.976" endtime="20231127 11:32:41.976"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${i}</var>
+<arg>${i}-1</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="NOT RUN" starttime="20231127 11:32:41.976" endtime="20231127 11:32:41.977"/>
+</kw>
+<break>
+<status status="NOT RUN" starttime="20231127 11:32:41.977" endtime="20231127 11:32:41.977"/>
+</break>
+<status status="NOT RUN" starttime="20231127 11:32:41.976" endtime="20231127 11:32:41.977"/>
+</branch>
+<status status="PASS" starttime="20231127 11:32:41.976" endtime="20231127 11:32:41.977"/>
+</if>
+<status status="PASS" starttime="20231127 11:32:41.948" endtime="20231127 11:32:41.977"/>
+</iter>
+<iter>
+<var name="${elem}">&lt;appium.webdriver.webelement.WebElement (session="aee40f1a-72f8-479c-a07d-9ae8b4072f96", element="f0859ae6-1957-4f5b-ace2-d4fd84e4f664")&gt;</var>
+<kw name="Get Element Attribute" library="AppiumLibrary">
+<var>${country}</var>
+<arg>${elem}</arg>
+<arg>text</arg>
+<doc>Get element attribute using given attribute: name, value,...</doc>
+<msg timestamp="20231127 11:32:42.008" level="INFO">Element '&lt;appium.webdriver.webelement.WebElement (session="aee40f1a-72f8-479c-a07d-9ae8b4072f96", element="f0859ae6-1957-4f5b-ace2-d4fd84e4f664")&gt;' attribute 'text' value 'Belarus' </msg>
+<msg timestamp="20231127 11:32:42.009" level="INFO">${country} = Belarus</msg>
+<status status="PASS" starttime="20231127 11:32:41.977" endtime="20231127 11:32:42.009"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${country}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20231127 11:32:42.009" endtime="20231127 11:32:42.010"/>
+</kw>
+<if>
+<branch type="IF" condition="&quot;${country}&quot; == &quot;${element_visible}&quot;">
+<kw name="Log To Console" library="BuiltIn">
+<arg>${country}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" starttime="20231127 11:32:42.010" endtime="20231127 11:32:42.010"/>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<arg>${elem}</arg>
+<doc>Click element identified by `locator`.</doc>
+<status status="NOT RUN" starttime="20231127 11:32:42.010" endtime="20231127 11:32:42.010"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${i}</var>
+<arg>${i}-1</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="NOT RUN" starttime="20231127 11:32:42.011" endtime="20231127 11:32:42.011"/>
+</kw>
+<break>
+<status status="NOT RUN" starttime="20231127 11:32:42.011" endtime="20231127 11:32:42.011"/>
+</break>
+<status status="NOT RUN" starttime="20231127 11:32:42.010" endtime="20231127 11:32:42.011"/>
+</branch>
+<status status="PASS" starttime="20231127 11:32:42.010" endtime="20231127 11:32:42.011"/>
+</if>
+<status status="PASS" starttime="20231127 11:32:41.977" endtime="20231127 11:32:42.011"/>
+</iter>
+<iter>
+<var name="${elem}">&lt;appium.webdriver.webelement.WebElement (session="aee40f1a-72f8-479c-a07d-9ae8b4072f96", element="87720e6b-8834-4e76-86e5-0a0b4578b264")&gt;</var>
+<kw name="Get Element Attribute" library="AppiumLibrary">
+<var>${country}</var>
+<arg>${elem}</arg>
+<arg>text</arg>
+<doc>Get element attribute using given attribute: name, value,...</doc>
+<msg timestamp="20231127 11:32:42.037" level="INFO">Element '&lt;appium.webdriver.webelement.WebElement (session="aee40f1a-72f8-479c-a07d-9ae8b4072f96", element="87720e6b-8834-4e76-86e5-0a0b4578b264")&gt;' attribute 'text' value 'Belgium' </msg>
+<msg timestamp="20231127 11:32:42.037" level="INFO">${country} = Belgium</msg>
+<status status="PASS" starttime="20231127 11:32:42.011" endtime="20231127 11:32:42.037"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${country}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20231127 11:32:42.037" endtime="20231127 11:32:42.038"/>
+</kw>
+<if>
+<branch type="IF" condition="&quot;${country}&quot; == &quot;${element_visible}&quot;">
+<kw name="Log To Console" library="BuiltIn">
+<arg>${country}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" starttime="20231127 11:32:42.038" endtime="20231127 11:32:42.038"/>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<arg>${elem}</arg>
+<doc>Click element identified by `locator`.</doc>
+<status status="NOT RUN" starttime="20231127 11:32:42.038" endtime="20231127 11:32:42.039"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${i}</var>
+<arg>${i}-1</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="NOT RUN" starttime="20231127 11:32:42.039" endtime="20231127 11:32:42.039"/>
+</kw>
+<break>
+<status status="NOT RUN" starttime="20231127 11:32:42.039" endtime="20231127 11:32:42.039"/>
+</break>
+<status status="NOT RUN" starttime="20231127 11:32:42.038" endtime="20231127 11:32:42.039"/>
+</branch>
+<status status="PASS" starttime="20231127 11:32:42.038" endtime="20231127 11:32:42.039"/>
+</if>
+<status status="PASS" starttime="20231127 11:32:42.011" endtime="20231127 11:32:42.039"/>
+</iter>
+<iter>
+<var name="${elem}">&lt;appium.webdriver.webelement.WebElement (session="aee40f1a-72f8-479c-a07d-9ae8b4072f96", element="6b20c46c-82ec-472f-b67a-15b4b254deb8")&gt;</var>
+<kw name="Get Element Attribute" library="AppiumLibrary">
+<var>${country}</var>
+<arg>${elem}</arg>
+<arg>text</arg>
+<doc>Get element attribute using given attribute: name, value,...</doc>
+<msg timestamp="20231127 11:32:42.074" level="INFO">Element '&lt;appium.webdriver.webelement.WebElement (session="aee40f1a-72f8-479c-a07d-9ae8b4072f96", element="6b20c46c-82ec-472f-b67a-15b4b254deb8")&gt;' attribute 'text' value 'Belize' </msg>
+<msg timestamp="20231127 11:32:42.074" level="INFO">${country} = Belize</msg>
+<status status="PASS" starttime="20231127 11:32:42.039" endtime="20231127 11:32:42.075"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${country}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20231127 11:32:42.075" endtime="20231127 11:32:42.076"/>
+</kw>
+<if>
+<branch type="IF" condition="&quot;${country}&quot; == &quot;${element_visible}&quot;">
+<kw name="Log To Console" library="BuiltIn">
+<arg>${country}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" starttime="20231127 11:32:42.077" endtime="20231127 11:32:42.077"/>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<arg>${elem}</arg>
+<doc>Click element identified by `locator`.</doc>
+<status status="NOT RUN" starttime="20231127 11:32:42.077" endtime="20231127 11:32:42.077"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${i}</var>
+<arg>${i}-1</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="NOT RUN" starttime="20231127 11:32:42.077" endtime="20231127 11:32:42.077"/>
+</kw>
+<break>
+<status status="NOT RUN" starttime="20231127 11:32:42.077" endtime="20231127 11:32:42.077"/>
+</break>
+<status status="NOT RUN" starttime="20231127 11:32:42.076" endtime="20231127 11:32:42.077"/>
+</branch>
+<status status="PASS" starttime="20231127 11:32:42.076" endtime="20231127 11:32:42.077"/>
+</if>
+<status status="PASS" starttime="20231127 11:32:42.039" endtime="20231127 11:32:42.077"/>
+</iter>
+<iter>
+<var name="${elem}">&lt;appium.webdriver.webelement.WebElement (session="aee40f1a-72f8-479c-a07d-9ae8b4072f96", element="d1416ee2-7178-4d74-9587-d3c9e221319f")&gt;</var>
+<kw name="Get Element Attribute" library="AppiumLibrary">
+<var>${country}</var>
+<arg>${elem}</arg>
+<arg>text</arg>
+<doc>Get element attribute using given attribute: name, value,...</doc>
+<msg timestamp="20231127 11:32:42.110" level="INFO">Element '&lt;appium.webdriver.webelement.WebElement (session="aee40f1a-72f8-479c-a07d-9ae8b4072f96", element="d1416ee2-7178-4d74-9587-d3c9e221319f")&gt;' attribute 'text' value 'Benin' </msg>
+<msg timestamp="20231127 11:32:42.110" level="INFO">${country} = Benin</msg>
+<status status="PASS" starttime="20231127 11:32:42.078" endtime="20231127 11:32:42.110"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${country}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20231127 11:32:42.110" endtime="20231127 11:32:42.111"/>
+</kw>
+<if>
+<branch type="IF" condition="&quot;${country}&quot; == &quot;${element_visible}&quot;">
+<kw name="Log To Console" library="BuiltIn">
+<arg>${country}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" starttime="20231127 11:32:42.112" endtime="20231127 11:32:42.112"/>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<arg>${elem}</arg>
+<doc>Click element identified by `locator`.</doc>
+<status status="NOT RUN" starttime="20231127 11:32:42.112" endtime="20231127 11:32:42.112"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${i}</var>
+<arg>${i}-1</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="NOT RUN" starttime="20231127 11:32:42.112" endtime="20231127 11:32:42.112"/>
+</kw>
+<break>
+<status status="NOT RUN" starttime="20231127 11:32:42.112" endtime="20231127 11:32:42.112"/>
+</break>
+<status status="NOT RUN" starttime="20231127 11:32:42.111" endtime="20231127 11:32:42.113"/>
+</branch>
+<status status="PASS" starttime="20231127 11:32:42.111" endtime="20231127 11:32:42.113"/>
+</if>
+<status status="PASS" starttime="20231127 11:32:42.078" endtime="20231127 11:32:42.113"/>
+</iter>
+<iter>
+<var name="${elem}">&lt;appium.webdriver.webelement.WebElement (session="aee40f1a-72f8-479c-a07d-9ae8b4072f96", element="846f56a8-4738-4a20-98c0-f515379db600")&gt;</var>
+<kw name="Get Element Attribute" library="AppiumLibrary">
+<var>${country}</var>
+<arg>${elem}</arg>
+<arg>text</arg>
+<doc>Get element attribute using given attribute: name, value,...</doc>
+<msg timestamp="20231127 11:32:42.149" level="INFO">Element '&lt;appium.webdriver.webelement.WebElement (session="aee40f1a-72f8-479c-a07d-9ae8b4072f96", element="846f56a8-4738-4a20-98c0-f515379db600")&gt;' attribute 'text' value 'Bermuda' </msg>
+<msg timestamp="20231127 11:32:42.150" level="INFO">${country} = Bermuda</msg>
+<status status="PASS" starttime="20231127 11:32:42.113" endtime="20231127 11:32:42.150"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${country}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20231127 11:32:42.150" endtime="20231127 11:32:42.150"/>
+</kw>
+<if>
+<branch type="IF" condition="&quot;${country}&quot; == &quot;${element_visible}&quot;">
+<kw name="Log To Console" library="BuiltIn">
+<arg>${country}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" starttime="20231127 11:32:42.151" endtime="20231127 11:32:42.151"/>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<arg>${elem}</arg>
+<doc>Click element identified by `locator`.</doc>
+<status status="NOT RUN" starttime="20231127 11:32:42.152" endtime="20231127 11:32:42.152"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${i}</var>
+<arg>${i}-1</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="NOT RUN" starttime="20231127 11:32:42.152" endtime="20231127 11:32:42.152"/>
+</kw>
+<break>
+<status status="NOT RUN" starttime="20231127 11:32:42.152" endtime="20231127 11:32:42.152"/>
+</break>
+<status status="NOT RUN" starttime="20231127 11:32:42.151" endtime="20231127 11:32:42.152"/>
+</branch>
+<status status="PASS" starttime="20231127 11:32:42.151" endtime="20231127 11:32:42.152"/>
+</if>
+<status status="PASS" starttime="20231127 11:32:42.113" endtime="20231127 11:32:42.152"/>
+</iter>
+<iter>
+<var name="${elem}">&lt;appium.webdriver.webelement.WebElement (session="aee40f1a-72f8-479c-a07d-9ae8b4072f96", element="09bb0bcd-aff3-496b-be14-17e73977f8ca")&gt;</var>
+<kw name="Get Element Attribute" library="AppiumLibrary">
+<var>${country}</var>
+<arg>${elem}</arg>
+<arg>text</arg>
+<doc>Get element attribute using given attribute: name, value,...</doc>
+<msg timestamp="20231127 11:32:42.190" level="INFO">Element '&lt;appium.webdriver.webelement.WebElement (session="aee40f1a-72f8-479c-a07d-9ae8b4072f96", element="09bb0bcd-aff3-496b-be14-17e73977f8ca")&gt;' attribute 'text' value 'Bhutan' </msg>
+<msg timestamp="20231127 11:32:42.190" level="INFO">${country} = Bhutan</msg>
+<status status="PASS" starttime="20231127 11:32:42.152" endtime="20231127 11:32:42.190"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${country}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20231127 11:32:42.191" endtime="20231127 11:32:42.191"/>
+</kw>
+<if>
+<branch type="IF" condition="&quot;${country}&quot; == &quot;${element_visible}&quot;">
+<kw name="Log To Console" library="BuiltIn">
+<arg>${country}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" starttime="20231127 11:32:42.192" endtime="20231127 11:32:42.192"/>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<arg>${elem}</arg>
+<doc>Click element identified by `locator`.</doc>
+<status status="NOT RUN" starttime="20231127 11:32:42.193" endtime="20231127 11:32:42.193"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${i}</var>
+<arg>${i}-1</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="NOT RUN" starttime="20231127 11:32:42.193" endtime="20231127 11:32:42.193"/>
+</kw>
+<break>
+<status status="NOT RUN" starttime="20231127 11:32:42.193" endtime="20231127 11:32:42.193"/>
+</break>
+<status status="NOT RUN" starttime="20231127 11:32:42.192" endtime="20231127 11:32:42.194"/>
+</branch>
+<status status="PASS" starttime="20231127 11:32:42.192" endtime="20231127 11:32:42.194"/>
+</if>
+<status status="PASS" starttime="20231127 11:32:42.152" endtime="20231127 11:32:42.194"/>
+</iter>
+<iter>
+<var name="${elem}">&lt;appium.webdriver.webelement.WebElement (session="aee40f1a-72f8-479c-a07d-9ae8b4072f96", element="b68657d5-3f32-414a-b536-fb8c73a50807")&gt;</var>
+<kw name="Get Element Attribute" library="AppiumLibrary">
+<var>${country}</var>
+<arg>${elem}</arg>
+<arg>text</arg>
+<doc>Get element attribute using given attribute: name, value,...</doc>
+<msg timestamp="20231127 11:32:42.224" level="INFO">Element '&lt;appium.webdriver.webelement.WebElement (session="aee40f1a-72f8-479c-a07d-9ae8b4072f96", element="b68657d5-3f32-414a-b536-fb8c73a50807")&gt;' attribute 'text' value 'Bolivia' </msg>
+<msg timestamp="20231127 11:32:42.224" level="INFO">${country} = Bolivia</msg>
+<status status="PASS" starttime="20231127 11:32:42.194" endtime="20231127 11:32:42.224"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${country}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20231127 11:32:42.224" endtime="20231127 11:32:42.225"/>
+</kw>
+<if>
+<branch type="IF" condition="&quot;${country}&quot; == &quot;${element_visible}&quot;">
+<kw name="Log To Console" library="BuiltIn">
+<arg>${country}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" starttime="20231127 11:32:42.226" endtime="20231127 11:32:42.226"/>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<arg>${elem}</arg>
+<doc>Click element identified by `locator`.</doc>
+<status status="NOT RUN" starttime="20231127 11:32:42.226" endtime="20231127 11:32:42.226"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${i}</var>
+<arg>${i}-1</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="NOT RUN" starttime="20231127 11:32:42.226" endtime="20231127 11:32:42.226"/>
+</kw>
+<break>
+<status status="NOT RUN" starttime="20231127 11:32:42.226" endtime="20231127 11:32:42.226"/>
+</break>
+<status status="NOT RUN" starttime="20231127 11:32:42.225" endtime="20231127 11:32:42.226"/>
+</branch>
+<status status="PASS" starttime="20231127 11:32:42.225" endtime="20231127 11:32:42.226"/>
+</if>
+<status status="PASS" starttime="20231127 11:32:42.194" endtime="20231127 11:32:42.226"/>
+</iter>
+<status status="PASS" starttime="20231127 11:32:41.880" endtime="20231127 11:32:42.226"/>
+</for>
+<kw name="Swipe" library="AppiumLibrary">
+<arg>789</arg>
+<arg>2088</arg>
+<arg>178</arg>
+<arg>595</arg>
+<doc>Swipe from one point to another point, for an optional duration.</doc>
+<status status="PASS" starttime="20231127 11:32:42.226" endtime="20231127 11:32:46.371"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20231127 11:32:51.373" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20231127 11:32:46.371" endtime="20231127 11:32:51.373"/>
+</kw>
+<status status="PASS" starttime="20231127 11:32:41.718" endtime="20231127 11:32:51.373"/>
+</iter>
+<iter>
+<kw name="Get Webelements" library="AppiumLibrary">
+<var>${LIST_ELEMENTS}</var>
+<arg>xpath=//android.widget.TextView</arg>
+<doc>Returns list of [http://selenium-python.readthedocs.io/api.html#module-selenium.webdriver.remote.webelement|WebElement] objects matching ``locator``.</doc>
+<msg timestamp="20231127 11:32:51.519" level="INFO">xpath criteria: //android.widget.TextView</msg>
+<msg timestamp="20231127 11:32:51.519" level="INFO">${LIST_ELEMENTS} = [&lt;appium.webdriver.webelement.WebElement (session="aee40f1a-72f8-479c-a07d-9ae8b4072f96", element="f28b863e-4288-455d-8cc0-376427941ade")&gt;, &lt;appium.webdriver.webelement.WebElement (session="aee40f1a-7...</msg>
+<status status="PASS" starttime="20231127 11:32:51.373" endtime="20231127 11:32:51.519"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${LIST_ELEMENTS}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20231127 11:32:51.520" endtime="20231127 11:32:51.522"/>
+</kw>
+<kw name="Get Length" library="BuiltIn">
+<var>${LIST_LENGTH}</var>
+<arg>${LIST_ELEMENTS}</arg>
+<doc>Returns and logs the length of the given item as an integer.</doc>
+<msg timestamp="20231127 11:32:51.522" level="INFO">Length is 9</msg>
+<msg timestamp="20231127 11:32:51.522" level="INFO">${LIST_LENGTH} = 9</msg>
+<status status="PASS" starttime="20231127 11:32:51.522" endtime="20231127 11:32:51.522"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${LIST_LENGTH}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20231127 11:32:51.523" endtime="20231127 11:32:51.523"/>
+</kw>
+<for flavor="IN">
+<var>${elem}</var>
+<value>@{LIST_ELEMENTS}</value>
+<iter>
+<var name="${elem}">&lt;appium.webdriver.webelement.WebElement (session="aee40f1a-72f8-479c-a07d-9ae8b4072f96", element="f28b863e-4288-455d-8cc0-376427941ade")&gt;</var>
+<kw name="Get Element Attribute" library="AppiumLibrary">
+<var>${country}</var>
+<arg>${elem}</arg>
+<arg>text</arg>
+<doc>Get element attribute using given attribute: name, value,...</doc>
+<msg timestamp="20231127 11:32:51.552" level="INFO">Element '&lt;appium.webdriver.webelement.WebElement (session="aee40f1a-72f8-479c-a07d-9ae8b4072f96", element="f28b863e-4288-455d-8cc0-376427941ade")&gt;' attribute 'text' value 'Bolivia' </msg>
+<msg timestamp="20231127 11:32:51.552" level="INFO">${country} = Bolivia</msg>
+<status status="PASS" starttime="20231127 11:32:51.524" endtime="20231127 11:32:51.552"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${country}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20231127 11:32:51.552" endtime="20231127 11:32:51.553"/>
+</kw>
+<if>
+<branch type="IF" condition="&quot;${country}&quot; == &quot;${element_visible}&quot;">
+<kw name="Log To Console" library="BuiltIn">
+<arg>${country}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" starttime="20231127 11:32:51.553" endtime="20231127 11:32:51.553"/>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<arg>${elem}</arg>
+<doc>Click element identified by `locator`.</doc>
+<status status="NOT RUN" starttime="20231127 11:32:51.553" endtime="20231127 11:32:51.554"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${i}</var>
+<arg>${i}-1</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="NOT RUN" starttime="20231127 11:32:51.554" endtime="20231127 11:32:51.554"/>
+</kw>
+<break>
+<status status="NOT RUN" starttime="20231127 11:32:51.554" endtime="20231127 11:32:51.554"/>
+</break>
+<status status="NOT RUN" starttime="20231127 11:32:51.553" endtime="20231127 11:32:51.554"/>
+</branch>
+<status status="PASS" starttime="20231127 11:32:51.553" endtime="20231127 11:32:51.554"/>
+</if>
+<status status="PASS" starttime="20231127 11:32:51.524" endtime="20231127 11:32:51.554"/>
+</iter>
+<iter>
+<var name="${elem}">&lt;appium.webdriver.webelement.WebElement (session="aee40f1a-72f8-479c-a07d-9ae8b4072f96", element="7bee688f-719b-42f4-8732-7f9646b1584a")&gt;</var>
+<kw name="Get Element Attribute" library="AppiumLibrary">
+<var>${country}</var>
+<arg>${elem}</arg>
+<arg>text</arg>
+<doc>Get element attribute using given attribute: name, value,...</doc>
+<msg timestamp="20231127 11:32:51.583" level="INFO">Element '&lt;appium.webdriver.webelement.WebElement (session="aee40f1a-72f8-479c-a07d-9ae8b4072f96", element="7bee688f-719b-42f4-8732-7f9646b1584a")&gt;' attribute 'text' value 'Bosnia and Herzegowina' </msg>
+<msg timestamp="20231127 11:32:51.584" level="INFO">${country} = Bosnia and Herzegowina</msg>
+<status status="PASS" starttime="20231127 11:32:51.554" endtime="20231127 11:32:51.584"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${country}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20231127 11:32:51.584" endtime="20231127 11:32:51.585"/>
+</kw>
+<if>
+<branch type="IF" condition="&quot;${country}&quot; == &quot;${element_visible}&quot;">
+<kw name="Log To Console" library="BuiltIn">
+<arg>${country}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" starttime="20231127 11:32:51.585" endtime="20231127 11:32:51.585"/>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<arg>${elem}</arg>
+<doc>Click element identified by `locator`.</doc>
+<status status="NOT RUN" starttime="20231127 11:32:51.585" endtime="20231127 11:32:51.585"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${i}</var>
+<arg>${i}-1</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="NOT RUN" starttime="20231127 11:32:51.585" endtime="20231127 11:32:51.586"/>
+</kw>
+<break>
+<status status="NOT RUN" starttime="20231127 11:32:51.586" endtime="20231127 11:32:51.586"/>
+</break>
+<status status="NOT RUN" starttime="20231127 11:32:51.585" endtime="20231127 11:32:51.586"/>
+</branch>
+<status status="PASS" starttime="20231127 11:32:51.585" endtime="20231127 11:32:51.586"/>
+</if>
+<status status="PASS" starttime="20231127 11:32:51.554" endtime="20231127 11:32:51.586"/>
+</iter>
+<iter>
+<var name="${elem}">&lt;appium.webdriver.webelement.WebElement (session="aee40f1a-72f8-479c-a07d-9ae8b4072f96", element="bb1fdf86-1a4b-41cb-b878-bc568d4489a4")&gt;</var>
+<kw name="Get Element Attribute" library="AppiumLibrary">
+<var>${country}</var>
+<arg>${elem}</arg>
+<arg>text</arg>
+<doc>Get element attribute using given attribute: name, value,...</doc>
+<msg timestamp="20231127 11:32:51.616" level="INFO">Element '&lt;appium.webdriver.webelement.WebElement (session="aee40f1a-72f8-479c-a07d-9ae8b4072f96", element="bb1fdf86-1a4b-41cb-b878-bc568d4489a4")&gt;' attribute 'text' value 'Botswana' </msg>
+<msg timestamp="20231127 11:32:51.616" level="INFO">${country} = Botswana</msg>
+<status status="PASS" starttime="20231127 11:32:51.586" endtime="20231127 11:32:51.616"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${country}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20231127 11:32:51.616" endtime="20231127 11:32:51.617"/>
+</kw>
+<if>
+<branch type="IF" condition="&quot;${country}&quot; == &quot;${element_visible}&quot;">
+<kw name="Log To Console" library="BuiltIn">
+<arg>${country}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" starttime="20231127 11:32:51.617" endtime="20231127 11:32:51.617"/>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<arg>${elem}</arg>
+<doc>Click element identified by `locator`.</doc>
+<status status="NOT RUN" starttime="20231127 11:32:51.618" endtime="20231127 11:32:51.618"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${i}</var>
+<arg>${i}-1</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="NOT RUN" starttime="20231127 11:32:51.618" endtime="20231127 11:32:51.618"/>
+</kw>
+<break>
+<status status="NOT RUN" starttime="20231127 11:32:51.618" endtime="20231127 11:32:51.618"/>
+</break>
+<status status="NOT RUN" starttime="20231127 11:32:51.617" endtime="20231127 11:32:51.618"/>
+</branch>
+<status status="PASS" starttime="20231127 11:32:51.617" endtime="20231127 11:32:51.618"/>
+</if>
+<status status="PASS" starttime="20231127 11:32:51.586" endtime="20231127 11:32:51.618"/>
+</iter>
+<iter>
+<var name="${elem}">&lt;appium.webdriver.webelement.WebElement (session="aee40f1a-72f8-479c-a07d-9ae8b4072f96", element="3132f133-f145-4e4d-948e-5bc160118875")&gt;</var>
+<kw name="Get Element Attribute" library="AppiumLibrary">
+<var>${country}</var>
+<arg>${elem}</arg>
+<arg>text</arg>
+<doc>Get element attribute using given attribute: name, value,...</doc>
+<msg timestamp="20231127 11:32:51.650" level="INFO">Element '&lt;appium.webdriver.webelement.WebElement (session="aee40f1a-72f8-479c-a07d-9ae8b4072f96", element="3132f133-f145-4e4d-948e-5bc160118875")&gt;' attribute 'text' value 'Bouvet Island' </msg>
+<msg timestamp="20231127 11:32:51.650" level="INFO">${country} = Bouvet Island</msg>
+<status status="PASS" starttime="20231127 11:32:51.618" endtime="20231127 11:32:51.650"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${country}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20231127 11:32:51.650" endtime="20231127 11:32:51.651"/>
+</kw>
+<if>
+<branch type="IF" condition="&quot;${country}&quot; == &quot;${element_visible}&quot;">
+<kw name="Log To Console" library="BuiltIn">
+<arg>${country}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" starttime="20231127 11:32:51.651" endtime="20231127 11:32:51.651"/>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<arg>${elem}</arg>
+<doc>Click element identified by `locator`.</doc>
+<status status="NOT RUN" starttime="20231127 11:32:51.651" endtime="20231127 11:32:51.652"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${i}</var>
+<arg>${i}-1</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="NOT RUN" starttime="20231127 11:32:51.652" endtime="20231127 11:32:51.652"/>
+</kw>
+<break>
+<status status="NOT RUN" starttime="20231127 11:32:51.652" endtime="20231127 11:32:51.652"/>
+</break>
+<status status="NOT RUN" starttime="20231127 11:32:51.651" endtime="20231127 11:32:51.652"/>
+</branch>
+<status status="PASS" starttime="20231127 11:32:51.651" endtime="20231127 11:32:51.652"/>
+</if>
+<status status="PASS" starttime="20231127 11:32:51.618" endtime="20231127 11:32:51.652"/>
+</iter>
+<iter>
+<var name="${elem}">&lt;appium.webdriver.webelement.WebElement (session="aee40f1a-72f8-479c-a07d-9ae8b4072f96", element="43812aec-12ec-4005-a0c6-94beb6a17185")&gt;</var>
+<kw name="Get Element Attribute" library="AppiumLibrary">
+<var>${country}</var>
+<arg>${elem}</arg>
+<arg>text</arg>
+<doc>Get element attribute using given attribute: name, value,...</doc>
+<msg timestamp="20231127 11:32:51.681" level="INFO">Element '&lt;appium.webdriver.webelement.WebElement (session="aee40f1a-72f8-479c-a07d-9ae8b4072f96", element="43812aec-12ec-4005-a0c6-94beb6a17185")&gt;' attribute 'text' value 'Brazil' </msg>
+<msg timestamp="20231127 11:32:51.682" level="INFO">${country} = Brazil</msg>
+<status status="PASS" starttime="20231127 11:32:51.652" endtime="20231127 11:32:51.682"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${country}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20231127 11:32:51.682" endtime="20231127 11:32:51.683"/>
+</kw>
+<if>
+<branch type="IF" condition="&quot;${country}&quot; == &quot;${element_visible}&quot;">
+<kw name="Log To Console" library="BuiltIn">
+<arg>${country}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20231127 11:32:51.683" endtime="20231127 11:32:51.684"/>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<arg>${elem}</arg>
+<doc>Click element identified by `locator`.</doc>
+<msg timestamp="20231127 11:32:51.689" level="INFO">Clicking element '&lt;appium.webdriver.webelement.WebElement (session="aee40f1a-72f8-479c-a07d-9ae8b4072f96", element="43812aec-12ec-4005-a0c6-94beb6a17185")&gt;'.</msg>
+<status status="PASS" starttime="20231127 11:32:51.684" endtime="20231127 11:32:52.518"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${i}</var>
+<arg>${i}-1</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20231127 11:32:52.519" level="INFO">${i} = 0</msg>
+<status status="PASS" starttime="20231127 11:32:52.518" endtime="20231127 11:32:52.519"/>
+</kw>
+<break>
+<status status="PASS" starttime="20231127 11:32:52.519" endtime="20231127 11:32:52.519"/>
+</break>
+<status status="PASS" starttime="20231127 11:32:51.683" endtime="20231127 11:32:52.519"/>
+</branch>
+<status status="PASS" starttime="20231127 11:32:51.683" endtime="20231127 11:32:52.519"/>
+</if>
+<status status="PASS" starttime="20231127 11:32:51.652" endtime="20231127 11:32:52.519"/>
+</iter>
+<status status="PASS" starttime="20231127 11:32:51.524" endtime="20231127 11:32:52.519"/>
+</for>
+<kw name="Swipe" library="AppiumLibrary">
+<arg>789</arg>
+<arg>2088</arg>
+<arg>178</arg>
+<arg>595</arg>
+<doc>Swipe from one point to another point, for an optional duration.</doc>
+<status status="PASS" starttime="20231127 11:32:52.520" endtime="20231127 11:32:56.526"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20231127 11:33:01.528" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20231127 11:32:56.526" endtime="20231127 11:33:01.528"/>
+</kw>
+<status status="PASS" starttime="20231127 11:32:51.373" endtime="20231127 11:33:01.528"/>
+</iter>
+<status status="PASS" starttime="20231127 11:32:22.034" endtime="20231127 11:33:01.528"/>
+</while>
+<status status="PASS" starttime="20231127 11:32:22.031" endtime="20231127 11:33:01.528"/>
+</kw>
+<status status="PASS" starttime="20231127 11:32:16.337" endtime="20231127 11:33:01.528"/>
+</kw>
+<kw name="Provide the name" library="operations">
+<kw name="Click the Element" library="common keywords">
+<arg>${input_text}</arg>
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<arg>${element1}</arg>
+<doc>Waits until element specified with `locator` is visible.</doc>
+<msg timestamp="20231127 11:33:01.598" level="INFO">criteria is com.androidsample.generalstore:id/nameField</msg>
+<status status="PASS" starttime="20231127 11:33:01.530" endtime="20231127 11:33:01.599"/>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<arg>${element1}</arg>
+<doc>Click element identified by `locator`.</doc>
+<msg timestamp="20231127 11:33:01.602" level="INFO">Clicking element 'id=com.androidsample.generalstore:id/nameField'.</msg>
+<msg timestamp="20231127 11:33:01.681" level="INFO">criteria is com.androidsample.generalstore:id/nameField</msg>
+<status status="PASS" starttime="20231127 11:33:01.599" endtime="20231127 11:33:01.681"/>
+</kw>
+<status status="PASS" starttime="20231127 11:33:01.529" endtime="20231127 11:33:01.682"/>
+</kw>
+<kw name="Enter the data" library="common keywords">
+<arg>${input_text}</arg>
+<arg>Harish</arg>
+<kw name="Input Text" library="AppiumLibrary">
+<arg>${element}</arg>
+<arg>${data}</arg>
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<msg timestamp="20231127 11:33:01.687" level="INFO">Typing text 'Harish' into text field 'id=com.androidsample.generalstore:id/nameField'</msg>
+<msg timestamp="20231127 11:33:03.517" level="INFO">criteria is com.androidsample.generalstore:id/nameField</msg>
+<status status="PASS" starttime="20231127 11:33:01.683" endtime="20231127 11:33:03.517"/>
+</kw>
+<status status="PASS" starttime="20231127 11:33:01.682" endtime="20231127 11:33:03.517"/>
+</kw>
+<kw name="Waiting_Time" library="common keywords">
+<arg>5</arg>
+<kw name="Sleep" library="BuiltIn">
+<arg>${element}</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20231127 11:33:08.519" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20231127 11:33:03.518" endtime="20231127 11:33:08.519"/>
+</kw>
+<status status="PASS" starttime="20231127 11:33:03.518" endtime="20231127 11:33:08.519"/>
+</kw>
+<kw name="Hide Keyboard" library="AppiumLibrary">
+<doc>Hides the software keyboard on the device. (optional) In iOS, use `key_name` to press
+a particular key, ex. `Done`. In Android, no parameters are used.</doc>
+<status status="PASS" starttime="20231127 11:33:08.519" endtime="20231127 11:33:09.498"/>
+</kw>
+<status status="PASS" starttime="20231127 11:33:01.529" endtime="20231127 11:33:09.498"/>
+</kw>
+<kw name="Select gender" library="operations">
+<kw name="Is Element Visible" library="common keywords">
+<arg>${radiofemale}</arg>
+<kw name="Element Should Be Visible" library="AppiumLibrary">
+<arg>${element}</arg>
+<doc>Verifies that element identified with locator is visible.</doc>
+<msg timestamp="20231127 11:33:09.925" level="INFO">criteria is com.androidsample.generalstore:id/radioFemale</msg>
+<status status="PASS" starttime="20231127 11:33:09.500" endtime="20231127 11:33:09.925"/>
+</kw>
+<status status="PASS" starttime="20231127 11:33:09.499" endtime="20231127 11:33:09.925"/>
+</kw>
+<kw name="Click the Element" library="common keywords">
+<arg>${radiofemale}</arg>
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<arg>${element1}</arg>
+<doc>Waits until element specified with `locator` is visible.</doc>
+<msg timestamp="20231127 11:33:09.995" level="INFO">criteria is com.androidsample.generalstore:id/radioFemale</msg>
+<status status="PASS" starttime="20231127 11:33:09.926" endtime="20231127 11:33:09.995"/>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<arg>${element1}</arg>
+<doc>Click element identified by `locator`.</doc>
+<msg timestamp="20231127 11:33:10.001" level="INFO">Clicking element 'id=com.androidsample.generalstore:id/radioFemale'.</msg>
+<msg timestamp="20231127 11:33:10.079" level="INFO">criteria is com.androidsample.generalstore:id/radioFemale</msg>
+<status status="PASS" starttime="20231127 11:33:09.995" endtime="20231127 11:33:10.080"/>
+</kw>
+<status status="PASS" starttime="20231127 11:33:09.925" endtime="20231127 11:33:10.080"/>
+</kw>
+<status status="PASS" starttime="20231127 11:33:09.499" endtime="20231127 11:33:10.080"/>
+</kw>
+<kw name="Lets shop" library="operations">
+<kw name="Click the Element" library="common keywords">
+<arg>${letsshop_button}</arg>
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<arg>${element1}</arg>
+<doc>Waits until element specified with `locator` is visible.</doc>
+<msg timestamp="20231127 11:33:10.662" level="INFO">criteria is com.androidsample.generalstore:id/btnLetsShop</msg>
+<status status="PASS" starttime="20231127 11:33:10.082" endtime="20231127 11:33:10.662"/>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<arg>${element1}</arg>
+<doc>Click element identified by `locator`.</doc>
+<msg timestamp="20231127 11:33:10.668" level="INFO">Clicking element 'id=com.androidsample.generalstore:id/btnLetsShop'.</msg>
+<msg timestamp="20231127 11:33:10.776" level="INFO">criteria is com.androidsample.generalstore:id/btnLetsShop</msg>
+<status status="PASS" starttime="20231127 11:33:10.662" endtime="20231127 11:33:10.776"/>
+</kw>
+<status status="PASS" starttime="20231127 11:33:10.081" endtime="20231127 11:33:10.776"/>
+</kw>
+<kw name="Waiting_Time" library="common keywords">
+<arg>5</arg>
+<kw name="Sleep" library="BuiltIn">
+<arg>${element}</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20231127 11:33:15.779" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20231127 11:33:10.778" endtime="20231127 11:33:15.779"/>
+</kw>
+<status status="PASS" starttime="20231127 11:33:10.776" endtime="20231127 11:33:15.779"/>
+</kw>
+<kw name="Is Element Visible" library="common keywords">
+<arg>${products_list}</arg>
+<kw name="Element Should Be Visible" library="AppiumLibrary">
+<arg>${element}</arg>
+<doc>Verifies that element identified with locator is visible.</doc>
+<msg timestamp="20231127 11:33:15.843" level="INFO">criteria is com.androidsample.generalstore:id/rvProductList</msg>
+<status status="PASS" starttime="20231127 11:33:15.780" endtime="20231127 11:33:15.843"/>
+</kw>
+<status status="PASS" starttime="20231127 11:33:15.779" endtime="20231127 11:33:15.844"/>
+</kw>
+<status status="PASS" starttime="20231127 11:33:10.081" endtime="20231127 11:33:15.844"/>
+</kw>
+<status status="PASS" starttime="20231127 11:32:16.336" endtime="20231127 11:33:15.845"/>
+</test>
+<test id="s1-t3" name="Purchase product" line="12">
+<kw name="Addtocart" library="operations">
+<kw name="Swipe until shoe found" library="operations">
+<arg>${product}</arg>
+<kw name="Evaluate" library="BuiltIn">
+<var>${index}</var>
+<arg>1</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20231127 11:33:15.848" level="INFO">${index} = 1</msg>
+<status status="PASS" starttime="20231127 11:33:15.848" endtime="20231127 11:33:15.848"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${i}</var>
+<arg>1</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20231127 11:33:15.849" level="INFO">${i} = 1</msg>
+<status status="PASS" starttime="20231127 11:33:15.849" endtime="20231127 11:33:15.849"/>
+</kw>
+<while condition="${i}&gt;0">
+<iter>
+<kw name="Get Webelements" library="AppiumLibrary">
+<var>${LIST_ELEMENTS}</var>
+<arg>id=com.androidsample.generalstore:id/productName</arg>
+<doc>Returns list of [http://selenium-python.readthedocs.io/api.html#module-selenium.webdriver.remote.webelement|WebElement] objects matching ``locator``.</doc>
+<msg timestamp="20231127 11:33:15.891" level="INFO">criteria is com.androidsample.generalstore:id/productName</msg>
+<msg timestamp="20231127 11:33:15.891" level="INFO">${LIST_ELEMENTS} = [&lt;appium.webdriver.webelement.WebElement (session="aee40f1a-72f8-479c-a07d-9ae8b4072f96", element="35954606-6009-401e-ab79-c4af1c1f892f")&gt;, &lt;appium.webdriver.webelement.WebElement (session="aee40f1a-7...</msg>
+<status status="PASS" starttime="20231127 11:33:15.849" endtime="20231127 11:33:15.891"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${LIST_ELEMENTS}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20231127 11:33:15.891" endtime="20231127 11:33:15.892"/>
+</kw>
+<kw name="Get Length" library="BuiltIn">
+<var>${LIST_LENGTH}</var>
+<arg>${LIST_ELEMENTS}</arg>
+<doc>Returns and logs the length of the given item as an integer.</doc>
+<msg timestamp="20231127 11:33:15.892" level="INFO">Length is 2</msg>
+<msg timestamp="20231127 11:33:15.893" level="INFO">${LIST_LENGTH} = 2</msg>
+<status status="PASS" starttime="20231127 11:33:15.892" endtime="20231127 11:33:15.893"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${LIST_LENGTH}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20231127 11:33:15.893" endtime="20231127 11:33:15.893"/>
+</kw>
+<for flavor="IN">
+<var>${elem}</var>
+<value>@{LIST_ELEMENTS}</value>
+<iter>
+<var name="${elem}">&lt;appium.webdriver.webelement.WebElement (session="aee40f1a-72f8-479c-a07d-9ae8b4072f96", element="35954606-6009-401e-ab79-c4af1c1f892f")&gt;</var>
+<kw name="Get Element Attribute" library="AppiumLibrary">
+<var>${shoe_prod}</var>
+<arg>${elem}</arg>
+<arg>text</arg>
+<doc>Get element attribute using given attribute: name, value,...</doc>
+<msg timestamp="20231127 11:33:15.921" level="INFO">Element '&lt;appium.webdriver.webelement.WebElement (session="aee40f1a-72f8-479c-a07d-9ae8b4072f96", element="35954606-6009-401e-ab79-c4af1c1f892f")&gt;' attribute 'text' value 'Air Jordan 4 Retro' </msg>
+<msg timestamp="20231127 11:33:15.921" level="INFO">${shoe_prod} = Air Jordan 4 Retro</msg>
+<status status="PASS" starttime="20231127 11:33:15.894" endtime="20231127 11:33:15.921"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${shoe_prod}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20231127 11:33:15.923" endtime="20231127 11:33:15.923"/>
+</kw>
+<if>
+<branch type="IF" condition="&quot;${shoe_prod}&quot; == &quot;${product}&quot;">
+<kw name="Log To Console" library="BuiltIn">
+<arg>${shoe_prod}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" starttime="20231127 11:33:15.923" endtime="20231127 11:33:15.923"/>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<arg>${add_to_cart}</arg>
+<doc>Click element identified by `locator`.</doc>
+<status status="NOT RUN" starttime="20231127 11:33:15.923" endtime="20231127 11:33:15.923"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${i}</var>
+<arg>${i}-1</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="NOT RUN" starttime="20231127 11:33:15.923" endtime="20231127 11:33:15.923"/>
+</kw>
+<break>
+<status status="NOT RUN" starttime="20231127 11:33:15.923" endtime="20231127 11:33:15.923"/>
+</break>
+<status status="NOT RUN" starttime="20231127 11:33:15.923" endtime="20231127 11:33:15.924"/>
+</branch>
+<status status="PASS" starttime="20231127 11:33:15.923" endtime="20231127 11:33:15.924"/>
+</if>
+<status status="PASS" starttime="20231127 11:33:15.894" endtime="20231127 11:33:15.924"/>
+</iter>
+<iter>
+<var name="${elem}">&lt;appium.webdriver.webelement.WebElement (session="aee40f1a-72f8-479c-a07d-9ae8b4072f96", element="ed43511b-fcf5-4b58-b141-9c90d2a79c2e")&gt;</var>
+<kw name="Get Element Attribute" library="AppiumLibrary">
+<var>${shoe_prod}</var>
+<arg>${elem}</arg>
+<arg>text</arg>
+<doc>Get element attribute using given attribute: name, value,...</doc>
+<msg timestamp="20231127 11:33:15.951" level="INFO">Element '&lt;appium.webdriver.webelement.WebElement (session="aee40f1a-72f8-479c-a07d-9ae8b4072f96", element="ed43511b-fcf5-4b58-b141-9c90d2a79c2e")&gt;' attribute 'text' value 'Air Jordan 1 Mid SE' </msg>
+<msg timestamp="20231127 11:33:15.951" level="INFO">${shoe_prod} = Air Jordan 1 Mid SE</msg>
+<status status="PASS" starttime="20231127 11:33:15.924" endtime="20231127 11:33:15.951"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${shoe_prod}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20231127 11:33:15.951" endtime="20231127 11:33:15.952"/>
+</kw>
+<if>
+<branch type="IF" condition="&quot;${shoe_prod}&quot; == &quot;${product}&quot;">
+<kw name="Log To Console" library="BuiltIn">
+<arg>${shoe_prod}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" starttime="20231127 11:33:15.952" endtime="20231127 11:33:15.952"/>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<arg>${add_to_cart}</arg>
+<doc>Click element identified by `locator`.</doc>
+<status status="NOT RUN" starttime="20231127 11:33:15.953" endtime="20231127 11:33:15.953"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${i}</var>
+<arg>${i}-1</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="NOT RUN" starttime="20231127 11:33:15.953" endtime="20231127 11:33:15.953"/>
+</kw>
+<break>
+<status status="NOT RUN" starttime="20231127 11:33:15.953" endtime="20231127 11:33:15.953"/>
+</break>
+<status status="NOT RUN" starttime="20231127 11:33:15.952" endtime="20231127 11:33:15.953"/>
+</branch>
+<status status="PASS" starttime="20231127 11:33:15.952" endtime="20231127 11:33:15.953"/>
+</if>
+<status status="PASS" starttime="20231127 11:33:15.924" endtime="20231127 11:33:15.953"/>
+</iter>
+<status status="PASS" starttime="20231127 11:33:15.893" endtime="20231127 11:33:15.953"/>
+</for>
+<kw name="Swipe" library="AppiumLibrary">
+<arg>1052</arg>
+<arg>1063</arg>
+<arg>28</arg>
+<arg>256</arg>
+<arg>500</arg>
+<doc>Swipe from one point to another point, for an optional duration.</doc>
+<status status="PASS" starttime="20231127 11:33:15.953" endtime="20231127 11:33:18.375"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20231127 11:33:23.376" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20231127 11:33:18.375" endtime="20231127 11:33:23.376"/>
+</kw>
+<status status="PASS" starttime="20231127 11:33:15.849" endtime="20231127 11:33:23.376"/>
+</iter>
+<iter>
+<kw name="Get Webelements" library="AppiumLibrary">
+<var>${LIST_ELEMENTS}</var>
+<arg>id=com.androidsample.generalstore:id/productName</arg>
+<doc>Returns list of [http://selenium-python.readthedocs.io/api.html#module-selenium.webdriver.remote.webelement|WebElement] objects matching ``locator``.</doc>
+<msg timestamp="20231127 11:33:23.423" level="INFO">criteria is com.androidsample.generalstore:id/productName</msg>
+<msg timestamp="20231127 11:33:23.423" level="INFO">${LIST_ELEMENTS} = [&lt;appium.webdriver.webelement.WebElement (session="aee40f1a-72f8-479c-a07d-9ae8b4072f96", element="88720481-b171-4b0b-b99b-e84bb0e8ce6e")&gt;, &lt;appium.webdriver.webelement.WebElement (session="aee40f1a-7...</msg>
+<status status="PASS" starttime="20231127 11:33:23.376" endtime="20231127 11:33:23.423"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${LIST_ELEMENTS}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20231127 11:33:23.424" endtime="20231127 11:33:23.424"/>
+</kw>
+<kw name="Get Length" library="BuiltIn">
+<var>${LIST_LENGTH}</var>
+<arg>${LIST_ELEMENTS}</arg>
+<doc>Returns and logs the length of the given item as an integer.</doc>
+<msg timestamp="20231127 11:33:23.425" level="INFO">Length is 2</msg>
+<msg timestamp="20231127 11:33:23.425" level="INFO">${LIST_LENGTH} = 2</msg>
+<status status="PASS" starttime="20231127 11:33:23.425" endtime="20231127 11:33:23.425"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${LIST_LENGTH}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20231127 11:33:23.425" endtime="20231127 11:33:23.426"/>
+</kw>
+<for flavor="IN">
+<var>${elem}</var>
+<value>@{LIST_ELEMENTS}</value>
+<iter>
+<var name="${elem}">&lt;appium.webdriver.webelement.WebElement (session="aee40f1a-72f8-479c-a07d-9ae8b4072f96", element="88720481-b171-4b0b-b99b-e84bb0e8ce6e")&gt;</var>
+<kw name="Get Element Attribute" library="AppiumLibrary">
+<var>${shoe_prod}</var>
+<arg>${elem}</arg>
+<arg>text</arg>
+<doc>Get element attribute using given attribute: name, value,...</doc>
+<msg timestamp="20231127 11:33:23.451" level="INFO">Element '&lt;appium.webdriver.webelement.WebElement (session="aee40f1a-72f8-479c-a07d-9ae8b4072f96", element="88720481-b171-4b0b-b99b-e84bb0e8ce6e")&gt;' attribute 'text' value 'Air Jordan 1 Mid SE' </msg>
+<msg timestamp="20231127 11:33:23.451" level="INFO">${shoe_prod} = Air Jordan 1 Mid SE</msg>
+<status status="PASS" starttime="20231127 11:33:23.426" endtime="20231127 11:33:23.451"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${shoe_prod}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20231127 11:33:23.452" endtime="20231127 11:33:23.452"/>
+</kw>
+<if>
+<branch type="IF" condition="&quot;${shoe_prod}&quot; == &quot;${product}&quot;">
+<kw name="Log To Console" library="BuiltIn">
+<arg>${shoe_prod}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" starttime="20231127 11:33:23.453" endtime="20231127 11:33:23.453"/>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<arg>${add_to_cart}</arg>
+<doc>Click element identified by `locator`.</doc>
+<status status="NOT RUN" starttime="20231127 11:33:23.453" endtime="20231127 11:33:23.453"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${i}</var>
+<arg>${i}-1</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="NOT RUN" starttime="20231127 11:33:23.453" endtime="20231127 11:33:23.453"/>
+</kw>
+<break>
+<status status="NOT RUN" starttime="20231127 11:33:23.453" endtime="20231127 11:33:23.453"/>
+</break>
+<status status="NOT RUN" starttime="20231127 11:33:23.452" endtime="20231127 11:33:23.453"/>
+</branch>
+<status status="PASS" starttime="20231127 11:33:23.452" endtime="20231127 11:33:23.453"/>
+</if>
+<status status="PASS" starttime="20231127 11:33:23.426" endtime="20231127 11:33:23.453"/>
+</iter>
+<iter>
+<var name="${elem}">&lt;appium.webdriver.webelement.WebElement (session="aee40f1a-72f8-479c-a07d-9ae8b4072f96", element="940f9311-c690-4b16-aadf-a01787a0cfda")&gt;</var>
+<kw name="Get Element Attribute" library="AppiumLibrary">
+<var>${shoe_prod}</var>
+<arg>${elem}</arg>
+<arg>text</arg>
+<doc>Get element attribute using given attribute: name, value,...</doc>
+<msg timestamp="20231127 11:33:23.480" level="INFO">Element '&lt;appium.webdriver.webelement.WebElement (session="aee40f1a-72f8-479c-a07d-9ae8b4072f96", element="940f9311-c690-4b16-aadf-a01787a0cfda")&gt;' attribute 'text' value 'Nike Blazer Mid '77' </msg>
+<msg timestamp="20231127 11:33:23.481" level="INFO">${shoe_prod} = Nike Blazer Mid '77</msg>
+<status status="PASS" starttime="20231127 11:33:23.453" endtime="20231127 11:33:23.481"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${shoe_prod}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20231127 11:33:23.481" endtime="20231127 11:33:23.482"/>
+</kw>
+<if>
+<branch type="IF" condition="&quot;${shoe_prod}&quot; == &quot;${product}&quot;">
+<kw name="Log To Console" library="BuiltIn">
+<arg>${shoe_prod}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" starttime="20231127 11:33:23.483" endtime="20231127 11:33:23.483"/>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<arg>${add_to_cart}</arg>
+<doc>Click element identified by `locator`.</doc>
+<status status="NOT RUN" starttime="20231127 11:33:23.483" endtime="20231127 11:33:23.483"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${i}</var>
+<arg>${i}-1</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="NOT RUN" starttime="20231127 11:33:23.483" endtime="20231127 11:33:23.483"/>
+</kw>
+<break>
+<status status="NOT RUN" starttime="20231127 11:33:23.483" endtime="20231127 11:33:23.483"/>
+</break>
+<status status="NOT RUN" starttime="20231127 11:33:23.482" endtime="20231127 11:33:23.483"/>
+</branch>
+<status status="PASS" starttime="20231127 11:33:23.482" endtime="20231127 11:33:23.483"/>
+</if>
+<status status="PASS" starttime="20231127 11:33:23.453" endtime="20231127 11:33:23.483"/>
+</iter>
+<status status="PASS" starttime="20231127 11:33:23.426" endtime="20231127 11:33:23.483"/>
+</for>
+<kw name="Swipe" library="AppiumLibrary">
+<arg>1052</arg>
+<arg>1063</arg>
+<arg>28</arg>
+<arg>256</arg>
+<arg>500</arg>
+<doc>Swipe from one point to another point, for an optional duration.</doc>
+<status status="PASS" starttime="20231127 11:33:23.484" endtime="20231127 11:33:25.811"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20231127 11:33:30.812" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20231127 11:33:25.811" endtime="20231127 11:33:30.812"/>
+</kw>
+<status status="PASS" starttime="20231127 11:33:23.376" endtime="20231127 11:33:30.812"/>
+</iter>
+<iter>
+<kw name="Get Webelements" library="AppiumLibrary">
+<var>${LIST_ELEMENTS}</var>
+<arg>id=com.androidsample.generalstore:id/productName</arg>
+<doc>Returns list of [http://selenium-python.readthedocs.io/api.html#module-selenium.webdriver.remote.webelement|WebElement] objects matching ``locator``.</doc>
+<msg timestamp="20231127 11:33:30.852" level="INFO">criteria is com.androidsample.generalstore:id/productName</msg>
+<msg timestamp="20231127 11:33:30.853" level="INFO">${LIST_ELEMENTS} = [&lt;appium.webdriver.webelement.WebElement (session="aee40f1a-72f8-479c-a07d-9ae8b4072f96", element="01bf2f18-3d56-4880-8ab9-6048cdb04b40")&gt;, &lt;appium.webdriver.webelement.WebElement (session="aee40f1a-7...</msg>
+<status status="PASS" starttime="20231127 11:33:30.813" endtime="20231127 11:33:30.853"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${LIST_ELEMENTS}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20231127 11:33:30.853" endtime="20231127 11:33:30.853"/>
+</kw>
+<kw name="Get Length" library="BuiltIn">
+<var>${LIST_LENGTH}</var>
+<arg>${LIST_ELEMENTS}</arg>
+<doc>Returns and logs the length of the given item as an integer.</doc>
+<msg timestamp="20231127 11:33:30.853" level="INFO">Length is 2</msg>
+<msg timestamp="20231127 11:33:30.854" level="INFO">${LIST_LENGTH} = 2</msg>
+<status status="PASS" starttime="20231127 11:33:30.853" endtime="20231127 11:33:30.854"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${LIST_LENGTH}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20231127 11:33:30.854" endtime="20231127 11:33:30.855"/>
+</kw>
+<for flavor="IN">
+<var>${elem}</var>
+<value>@{LIST_ELEMENTS}</value>
+<iter>
+<var name="${elem}">&lt;appium.webdriver.webelement.WebElement (session="aee40f1a-72f8-479c-a07d-9ae8b4072f96", element="01bf2f18-3d56-4880-8ab9-6048cdb04b40")&gt;</var>
+<kw name="Get Element Attribute" library="AppiumLibrary">
+<var>${shoe_prod}</var>
+<arg>${elem}</arg>
+<arg>text</arg>
+<doc>Get element attribute using given attribute: name, value,...</doc>
+<msg timestamp="20231127 11:33:30.886" level="INFO">Element '&lt;appium.webdriver.webelement.WebElement (session="aee40f1a-72f8-479c-a07d-9ae8b4072f96", element="01bf2f18-3d56-4880-8ab9-6048cdb04b40")&gt;' attribute 'text' value 'Nike Blazer Mid '77' </msg>
+<msg timestamp="20231127 11:33:30.886" level="INFO">${shoe_prod} = Nike Blazer Mid '77</msg>
+<status status="PASS" starttime="20231127 11:33:30.855" endtime="20231127 11:33:30.886"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${shoe_prod}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20231127 11:33:30.886" endtime="20231127 11:33:30.886"/>
+</kw>
+<if>
+<branch type="IF" condition="&quot;${shoe_prod}&quot; == &quot;${product}&quot;">
+<kw name="Log To Console" library="BuiltIn">
+<arg>${shoe_prod}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" starttime="20231127 11:33:30.887" endtime="20231127 11:33:30.887"/>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<arg>${add_to_cart}</arg>
+<doc>Click element identified by `locator`.</doc>
+<status status="NOT RUN" starttime="20231127 11:33:30.887" endtime="20231127 11:33:30.887"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${i}</var>
+<arg>${i}-1</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="NOT RUN" starttime="20231127 11:33:30.887" endtime="20231127 11:33:30.887"/>
+</kw>
+<break>
+<status status="NOT RUN" starttime="20231127 11:33:30.887" endtime="20231127 11:33:30.887"/>
+</break>
+<status status="NOT RUN" starttime="20231127 11:33:30.886" endtime="20231127 11:33:30.887"/>
+</branch>
+<status status="PASS" starttime="20231127 11:33:30.886" endtime="20231127 11:33:30.887"/>
+</if>
+<status status="PASS" starttime="20231127 11:33:30.855" endtime="20231127 11:33:30.887"/>
+</iter>
+<iter>
+<var name="${elem}">&lt;appium.webdriver.webelement.WebElement (session="aee40f1a-72f8-479c-a07d-9ae8b4072f96", element="64a8f869-c5e2-4cd8-823a-9174865fc51d")&gt;</var>
+<kw name="Get Element Attribute" library="AppiumLibrary">
+<var>${shoe_prod}</var>
+<arg>${elem}</arg>
+<arg>text</arg>
+<doc>Get element attribute using given attribute: name, value,...</doc>
+<msg timestamp="20231127 11:33:30.913" level="INFO">Element '&lt;appium.webdriver.webelement.WebElement (session="aee40f1a-72f8-479c-a07d-9ae8b4072f96", element="64a8f869-c5e2-4cd8-823a-9174865fc51d")&gt;' attribute 'text' value 'Converse All Star' </msg>
+<msg timestamp="20231127 11:33:30.913" level="INFO">${shoe_prod} = Converse All Star</msg>
+<status status="PASS" starttime="20231127 11:33:30.887" endtime="20231127 11:33:30.913"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${shoe_prod}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20231127 11:33:30.914" endtime="20231127 11:33:30.914"/>
+</kw>
+<if>
+<branch type="IF" condition="&quot;${shoe_prod}&quot; == &quot;${product}&quot;">
+<kw name="Log To Console" library="BuiltIn">
+<arg>${shoe_prod}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20231127 11:33:30.915" endtime="20231127 11:33:30.916"/>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<arg>${add_to_cart}</arg>
+<doc>Click element identified by `locator`.</doc>
+<msg timestamp="20231127 11:33:30.921" level="INFO">Clicking element 'xpath=//android.widget.TextView[@text='Converse All Star']/..//android.widget.TextView[@text='ADD TO CART']'.</msg>
+<msg timestamp="20231127 11:33:31.342" level="INFO">xpath criteria: //android.widget.TextView[@text='Converse All Star']/..//android.widget.TextView[@text='ADD TO CART']</msg>
+<status status="PASS" starttime="20231127 11:33:30.916" endtime="20231127 11:33:31.342"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${i}</var>
+<arg>${i}-1</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20231127 11:33:31.343" level="INFO">${i} = 0</msg>
+<status status="PASS" starttime="20231127 11:33:31.343" endtime="20231127 11:33:31.343"/>
+</kw>
+<break>
+<status status="PASS" starttime="20231127 11:33:31.343" endtime="20231127 11:33:31.343"/>
+</break>
+<status status="PASS" starttime="20231127 11:33:30.915" endtime="20231127 11:33:31.344"/>
+</branch>
+<status status="PASS" starttime="20231127 11:33:30.915" endtime="20231127 11:33:31.344"/>
+</if>
+<status status="PASS" starttime="20231127 11:33:30.887" endtime="20231127 11:33:31.344"/>
+</iter>
+<status status="PASS" starttime="20231127 11:33:30.855" endtime="20231127 11:33:31.344"/>
+</for>
+<kw name="Swipe" library="AppiumLibrary">
+<arg>1052</arg>
+<arg>1063</arg>
+<arg>28</arg>
+<arg>256</arg>
+<arg>500</arg>
+<doc>Swipe from one point to another point, for an optional duration.</doc>
+<status status="PASS" starttime="20231127 11:33:31.344" endtime="20231127 11:33:33.821"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20231127 11:33:38.822" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20231127 11:33:33.821" endtime="20231127 11:33:38.822"/>
+</kw>
+<status status="PASS" starttime="20231127 11:33:30.812" endtime="20231127 11:33:38.822"/>
+</iter>
+<status status="PASS" starttime="20231127 11:33:15.849" endtime="20231127 11:33:38.822"/>
+</while>
+<status status="PASS" starttime="20231127 11:33:15.848" endtime="20231127 11:33:38.822"/>
+</kw>
+<kw name="Click the Element" library="common keywords">
+<arg>${cart_btn}</arg>
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<arg>${element1}</arg>
+<doc>Waits until element specified with `locator` is visible.</doc>
+<msg timestamp="20231127 11:33:38.903" level="INFO">criteria is com.androidsample.generalstore:id/appbar_btn_cart</msg>
+<status status="PASS" starttime="20231127 11:33:38.823" endtime="20231127 11:33:38.903"/>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<arg>${element1}</arg>
+<doc>Click element identified by `locator`.</doc>
+<msg timestamp="20231127 11:33:38.907" level="INFO">Clicking element 'id=com.androidsample.generalstore:id/appbar_btn_cart'.</msg>
+<msg timestamp="20231127 11:33:38.987" level="INFO">criteria is com.androidsample.generalstore:id/appbar_btn_cart</msg>
+<status status="PASS" starttime="20231127 11:33:38.903" endtime="20231127 11:33:38.987"/>
+</kw>
+<status status="PASS" starttime="20231127 11:33:38.822" endtime="20231127 11:33:38.987"/>
+</kw>
+<kw name="Waiting_Time" library="common keywords">
+<arg>5</arg>
+<kw name="Sleep" library="BuiltIn">
+<arg>${element}</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20231127 11:33:43.988" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20231127 11:33:38.987" endtime="20231127 11:33:43.988"/>
+</kw>
+<status status="PASS" starttime="20231127 11:33:38.987" endtime="20231127 11:33:43.988"/>
+</kw>
+<status status="PASS" starttime="20231127 11:33:15.847" endtime="20231127 11:33:43.988"/>
+</kw>
+<status status="PASS" starttime="20231127 11:33:15.846" endtime="20231127 11:33:43.989"/>
+</test>
+<test id="s1-t4" name="Procced to checkout" line="14">
+<kw name="Proceed" library="operations">
+<kw name="Click Text" library="AppiumLibrary">
+<arg>${checkbox_text}</arg>
+<doc>Click text identified by ``text``.</doc>
+<msg timestamp="20231127 11:33:44.249" level="INFO">xpath criteria: //*[contains(@text,"Send me e-mails on discounts related to selected products in future")]</msg>
+<status status="PASS" starttime="20231127 11:33:43.992" endtime="20231127 11:33:44.249"/>
+</kw>
+<kw name="Long Press" library="AppiumLibrary">
+<arg>com.androidsample.generalstore:id/termsButton</arg>
+<doc>*DEPRECATED!!* Since selenium v4, use other keywords.</doc>
+<msg timestamp="20231127 11:33:44.249" level="WARN">Keyword 'AppiumLibrary.Long Press' is deprecated. Since selenium v4, use other keywords.</msg>
+<msg timestamp="20231127 11:33:47.409" level="INFO">criteria is com.androidsample.generalstore:id/termsButton</msg>
+<status status="PASS" starttime="20231127 11:33:44.249" endtime="20231127 11:33:47.409"/>
+</kw>
+<kw name="Waiting_Time" library="common keywords">
+<arg>5s</arg>
+<kw name="Sleep" library="BuiltIn">
+<arg>${element}</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20231127 11:33:52.410" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20231127 11:33:47.410" endtime="20231127 11:33:52.410"/>
+</kw>
+<status status="PASS" starttime="20231127 11:33:47.409" endtime="20231127 11:33:52.410"/>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<arg>id=android:id/button1</arg>
+<doc>Click element identified by `locator`.</doc>
+<msg timestamp="20231127 11:33:52.415" level="INFO">Clicking element 'id=android:id/button1'.</msg>
+<msg timestamp="20231127 11:33:52.484" level="INFO">criteria is android:id/button1</msg>
+<status status="PASS" starttime="20231127 11:33:52.410" endtime="20231127 11:33:52.484"/>
+</kw>
+<kw name="Click the Element" library="common keywords">
+<arg>${proceed_btn}</arg>
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<arg>${element1}</arg>
+<doc>Waits until element specified with `locator` is visible.</doc>
+<msg timestamp="20231127 11:33:53.045" level="INFO">criteria is com.androidsample.generalstore:id/btnProceed</msg>
+<status status="PASS" starttime="20231127 11:33:52.485" endtime="20231127 11:33:53.046"/>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<arg>${element1}</arg>
+<doc>Click element identified by `locator`.</doc>
+<msg timestamp="20231127 11:33:53.051" level="INFO">Clicking element 'id=com.androidsample.generalstore:id/btnProceed'.</msg>
+<msg timestamp="20231127 11:33:53.138" level="INFO">criteria is com.androidsample.generalstore:id/btnProceed</msg>
+<status status="PASS" starttime="20231127 11:33:53.046" endtime="20231127 11:33:53.138"/>
+</kw>
+<status status="PASS" starttime="20231127 11:33:52.485" endtime="20231127 11:33:53.138"/>
+</kw>
+<kw name="Waiting_Time" library="common keywords">
+<arg>5</arg>
+<kw name="Sleep" library="BuiltIn">
+<arg>${element}</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20231127 11:33:58.141" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20231127 11:33:53.139" endtime="20231127 11:33:58.141"/>
+</kw>
+<status status="PASS" starttime="20231127 11:33:53.139" endtime="20231127 11:33:58.141"/>
+</kw>
+<status status="PASS" starttime="20231127 11:33:43.992" endtime="20231127 11:33:58.141"/>
+</kw>
+<status status="PASS" starttime="20231127 11:33:43.990" endtime="20231127 11:33:58.141"/>
+</test>
+<test id="s1-t5" name="Terminate application" line="16">
+<kw name="Closing the application" library="operations">
+<kw name="Close Application" library="AppiumLibrary">
+<doc>Closes the current application and also close webdriver session.</doc>
+<status status="PASS" starttime="20231127 11:33:58.145" endtime="20231127 11:33:58.597"/>
+</kw>
+<status status="PASS" starttime="20231127 11:33:58.145" endtime="20231127 11:33:58.597"/>
+</kw>
+<status status="PASS" starttime="20231127 11:33:58.143" endtime="20231127 11:33:58.601"/>
+</test>
+<status status="PASS" starttime="20231127 11:31:59.017" endtime="20231127 11:33:58.608"/>
+</suite>
+<statistics>
+<total>
+<stat pass="5" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="5" fail="0" skip="0" id="s1" name="Testcase">Testcase</stat>
+</suite>
+</statistics>
+<errors>
+<msg timestamp="20231127 11:33:44.249" level="WARN">Keyword 'AppiumLibrary.Long Press' is deprecated. Since selenium v4, use other keywords.</msg>
+</errors>
+</robot>
